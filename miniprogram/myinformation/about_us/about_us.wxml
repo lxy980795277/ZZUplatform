@@ -1,0 +1,6 @@
+<view class="display_information">
+  <image src="../../images/about_us.png"  class="background"/>
+  <view class="Model1 text-xl">
+    <text>我们是居安思微团队,希望我们的作品能让大家都喜欢。\n\n有什么意见或者建议都可以向我们提出来鸭~~~</text>
+  </view>
+</view>

@@ -1,0 +1,193 @@
+<view class = 'top'>
+  <image class = 'top_image' src = '../../icons/say_background.png'/>
+</view>
+
+<block wx:key="id"wx:for="{{list}}" wx:for-item="item" wx:for-index="index">
+  <view class = 'top_'>
+    <view class = 'content'>  
+      <text class = 'content_type'>　　{{item.content}}</text>
+    </view>
+  </view>
+
+  <view class = 'border'></view>
+
+  <view class = "photo_all">
+      <view class = "photo">
+        <view wx:if="{{item.image_1!='no'}}"class = "each_photo">
+          <image style="width: 210rpx; height: 190rpx;"  mode = "aspectFill" src="{{item.image_1}}" 
+      data-src ="{{item.image_1}}" bindtap = "preview" ></image>
+        </view>
+        <view wx:if="{{item.image_2!='no'}}"class = "each_photo">
+          <image style="width: 210rpx; height: 190rpx;"  mode = "aspectFill" src="{{item.image_2}}" 
+      data-src ="{{item.image_2}}" bindtap = "preview" ></image>
+        </view>
+        <view wx:if="{{item.image_3!='no'}}"class = "each_photo">
+          <image style="width: 210rpx; height: 190rpx;"  mode = "aspectFill" src="{{item.image_3}}" 
+      data-src ="{{item.image_3}}" bindtap = "preview" ></image>
+        </view>
+      </view>
+
+      <view class = "photo">
+        <view wx:if="{{item.image_4!='no'}}"class = "each_photo">
+          <image style="width: 210rpx; height: 190rpx;"  mode = "aspectFill" src="{{item.image_4}}" 
+      data-src ="{{item.image_4}}" bindtap = "preview" ></image>
+        </view>
+        <view wx:if="{{item.image_5!='no'}}"class = "each_photo">
+          <image style="width: 210rpx; height: 190rpx;"  mode = "aspectFill" src="{{item.image_5}}" 
+      data-src ="{{item.image_5}}" bindtap = "preview" ></image>
+        </view>
+        <view wx:if="{{item.image_6!='no'}}"class = "each_photo">
+          <image style="width: 210rpx; height: 190rpx;"  mode = "aspectFill" src="{{item.image_6}}" 
+      data-src ="{{item.image_6}}" bindtap = "preview" ></image>
+        </view>
+      </view>
+
+      <view class = "photo">
+        <view wx:if="{{item.image_7!='no'}}"class = "each_photo">
+          <image style="width: 210rpx; height: 190rpx;"  mode = "aspectFill" src="{{item.image_7}}" 
+      data-src ="{{item.image_7}}" bindtap = "preview" ></image>
+        </view>
+        <view wx:if="{{item.image_8!='no'}}" class = "each_photo">
+          <image style="width: 210rpx; height: 190rpx;"  mode = "aspectFill" src="{{item.image_8}}" 
+      data-src ="{{item.image_8}}" bindtap = "preview" ></image>
+        </view>
+        <view wx:if="{{item.image_9!='no'}}"class = "each_photo">
+          <image style="width: 210rpx; height: 190rpx;"  mode = "aspectFill" src="{{item.image_9}}" 
+      data-src ="{{item.image_9}}" bindtap = "preview" ></image>
+        </view>
+      </view>
+
+    </view>
+    
+
+    <view wx:if='{{item.image_1!="no"}}'class = 'border_photobottom'></view>
+
+
+
+    <view class = "comment">
+    <view class = "left2">
+      <text class = "comment_font">评论({{item.comment_number}})</text>
+    </view>
+    <view class = 'input_area'>
+      <input type="text" class="comment_input" placeholder="请输入评论"placeholder-style="font-size:30rpx;"bindinput	='input'data-comment_number='{{item.comment_number}}' data-chatid='{{item.id}}'bindconfirm="send_comment" ></input>
+    </view>
+    <view class = "right2" data-comment_number='{{item.comment_number}}'bindtap='send_comment'>
+      <view class = "comment_icon">
+        <text class=" cuIcon-message text-Cyan"></text>
+      </view>
+    </view>
+  </view>
+
+      <!--没有评论的下方图片提示><-->
+        <!--没有评论的下方图片提示><-->
+          <!--没有评论的下方图片提示><-->
+            <!--没有评论的下方图片提示><-->
+      <view wx:if='{{item.comment_number==0}}' class = 'nopicture'>
+      <image src = 'https://www.zzumarket.com/nopicture.png'class = 'nopicture_class'/>
+      <view class = 'nopicture_font'>
+        <text class = 'nopicture_font_style'>当前暂无评论</text>
+      </view>
+  </view>
+  <view class="border_long"></view>
+
+
+</block>
+
+
+
+
+
+<view class = "down_comment">
+  
+  <view class = 'user_comment'>
+    <block wx:for="{{comment_list}}" wx:key ='comment_id'wx:for-item="item" wx:for-index="index">
+        <view class = "left3">
+          <view class = "user_comment_ava">
+            <image class = "comment_ava"src ="{{item.ava}}"></image>
+          </view>
+          <view class = "name_and_comment">
+            <view class = "name_and_time">
+              <view class = "name">
+                <text class = "comment_nick">路人甲</text>
+              </view>
+              <view class = "time">
+                <text>{{item.date}}</text>
+              </view>
+            </view>
+        
+            <view class = "comments" bindtap='add_comment'data-chatid='{{item.chatid}}'data-replyid='{{item.id}}'data-openid='{{item.openid}}'>
+              <text>{{item.content}}</text>
+            </view>
+          </view>
+
+        </view>
+        <view class = 'all_reply'>
+        <block  wx:for="{{comment_reply_list}}" wx:key ='Reid'wx:for-item="reply_item" wx:for-index="index">
+          
+          <view wx:if="{{reply_item.reply_id==item.id}}">
+          <view class = "border2"></view>
+          
+<view class = "reply">
+            <image class = "reply_ava" src="{{reply_item.ava}}"></image>
+            <view class = "topinfo">
+              <view class = "names">
+                <text class = "reply_nick">路人乙</text>
+                <!--text class = "huifu">回复</text>
+                <text class = "reply_nick">{{reply_item.reply_name}}：</text-->        <text class = "reply_time">{{reply_item.date}}</text>  
+              </view>
+              
+              <text class = 'reply_content' bindtap='add_comment' data-chatid='{{reply_item.chatid}}'data-replyid='{{item.id}}'data-openid='{{reply_item.openid}}'>{{reply_item.reply_content}}</text>
+            </view>
+            
+          </view>
+          
+          
+          </view>
+          
+        </block>
+        </view>
+
+        <view class = "border_bottom"></view>
+        
+    </block>
+  </view>
+  
+</view>
+
+<!--回复其他人的评论><-->
+<!--回复其他人的评论><-->
+<!--回复其他人的评论><-->
+<!--回复其他人的评论><-->
+<!--回复其他人的评论><-->
+
+<block wx:for="{{list}}" wx:key ='comment_id'wx:for-item="item" wx:for-index="index">
+  <view wx:if="{{if_input2}}">
+  <view class = 'reply_area'>
+      <textarea show-confirm-bar='false'type="text" class="reply_input" placeholder="请输入评论"placeholder-style="font-size:30rpx;"auto-height='true'bindinput	='input'auto-focus='true'bindblur = "inputdone"data-comment_number='{{item.comment_number}}'bindconfirm="send_comment2" ></textarea>
+     <view class = "reply_icon" data-comment_number='{{item.comment_number}}'bindtap='send_comment2'>
+      <view class = "comment_icon">
+        <text class=" cuIcon-message text-Cyan"></text>
+        
+      </view>
+    </view> 
+  </view>
+    
+  </view>
+</block>
+
+
+
+
+
+
+
+
+<wxs module="tools">
+var random = function () {
+  var a = Math.floor(Math.random()*10)
+  var result = '../../icons/ava/'+a+'.png'
+  return (result);
+}
+
+module.exports.random = random;
+</wxs>

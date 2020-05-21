@@ -1,0 +1,178 @@
+<view class = 'top'>
+  <view class = 'top_font'>
+    <text class = 'top_font_style'>—　购入　—</text>
+  </view>
+  
+  <view class = "school" >
+      <view class="btnn"style="width:85%;height:60rpx;">
+        <text class="cuIcon-search"></text>
+        <input type="text" class="inputtype" placeholder="请输入要搜索的内容"placeholder-style="font-size:25rpx;"bindconfirm='name_search'bindinput	='name_input' ></input>
+      </view>
+      <image class = 'list_icon'bindtap="showModal" data-target="DrawerModalL" src = '../../icons/list.png'/>
+  </view>
+  
+</view>
+
+
+
+
+
+
+
+<view class = 'sort_area'>
+  <view class = 'each_sort'bindtap="sort_price">
+    <text class = 'sort_font'>价格</text>
+    <image  class = 'sort_icon'src = '../../icons/down.png'/>
+  </view>
+  <view class = 'each_sort'bindtap="sort_see">
+    <text class = 'sort_font'>浏览</text>
+    <image class = 'sort_icon'src = '../../icons/down.png'/>
+  </view>
+  <view class = 'each_sort'bindtap="sort_date">
+    <text class = 'sort_font'>日期</text>
+    <image class = 'sort_icon'src = '../../icons/down.png'/>
+  </view>
+</view>
+
+<view wx:if="{{price_sort}}"id="box" class="{{first_click?'show_sort':'show_sort'}} {{state?'open':'close'}}">
+      <view id="item_list">
+            <view class = 'list_font'bindtap='return_sort'>　综合　</view>
+            <view class = 'list_font'bindtap='price_sort1'>价格降序</view>
+            <view class = 'list_font'bindtap='price_sort2'>价格升序</view>
+      </view>
+      <view class = 'mask'bindtap="hidemask" >
+      </view>
+</view>
+
+<view wx:if="{{see_sort}}"id="box" class="{{first_click?'show_sort':'show_sort'}} {{state?'open':'close'}}">
+      <view id="item_list">
+            <view class = 'list_font'bindtap='return_sort'>　综合　</view>
+            <view class = 'list_font' bindtap='see_sort1'>浏览降序</view>
+            <view class = 'list_font'bindtap='see_sort2'>浏览升序</view>
+      </view>
+      <view class = 'mask'bindtap="hidemask" >
+      </view>
+</view>
+
+<view wx:if="{{date_sort}}"id="box" class="{{first_click?'show_sort':'show_sort'}} {{state?'open':'close'}}">
+      <view id="item_list">
+            <view class = 'list_font'bindtap='return_sort'>　综合　</view>
+            <view class = 'list_font'bindtap='date_sort1'>日期倒序</view>
+            <view class = 'list_font'bindtap='date_sort2'>日期顺序</view>
+      </view>
+      <view class = 'mask'bindtap="hidemask" >
+      </view>
+</view>
+  
+
+  
+
+
+
+
+<wxs module="tools">
+  
+var slice = function (a) {
+  if (a.length >= 14) {
+    return (a.substring(0, 13)+"...");
+
+  }
+  else {
+    return (a);
+  }
+}
+
+module.exports.slice = slice;
+</wxs>
+
+
+<block wx:if="{{type==0}}"wx:key="id"wx:for="{{list_buy}}" wx:for-item="item" wx:for-index="index">
+    <view class = "each_background">
+      <view class = "each_content" data-openid="{{item.openid}}"data-id="{{item.id}}"data-name="{{item.name}}"data-type="{{item.type}}"data-money="{{item.money}}"data-people_phone="{{item.people_phone}}"data-see="{{item.see}}" bindtap = "goto_details">
+       
+      <view class = 'left_content'>
+        <view class = 'left_content_top'>
+          <view class  = 'user_info_area'>
+            <view class = "user_ava">
+              <image src="{{item.user_ava}}"class = "ava"/>
+            </view>
+            <view class = 'user_nick'>
+              <view class = 'nick_and_sex'>
+                <view class = "name_info">
+                  <text class = "nick">{{item.user_name}}</text>
+                </view>
+                <!--image wx:if="{{item.sex==1}}" class = 'sex_icon'src = '../../icons/man.png' />
+                <image wx:elif="{{item.sex==2}}" class = 'sex_icon'src = '../../icons/woman.png' /-->
+              </view>
+              <view class = 'data_content'>
+                <text class = "calendar_font">{{item.month}}月{{item.day}}日发布</text>
+              </view>
+            
+            </view>
+            <view class = 'see_number'>
+              <image class = 'see_icon'src = '../../icons/eye.png' />
+              <text class = 'see_number_font'>{{item.see}}</text>
+            </view>
+            
+          </view>
+        </view>
+        <view class = 'user_border'></view>
+
+        <view class = 'left_name_content'>
+          <text class = 'each_before_font'>欲购名称:</text>
+          <text class = "left_name">{{tools.slice(item.name)}}</text>
+        </view>
+        <view class = 'left_label_content'> 
+          <text class = 'each_before_font'>物品类别:</text>
+          <view class = 'left_label'>#{{item.type}}#</view>
+        </view>
+        <view class = 'left_money_content'> 
+          <text class = 'each_before_font'>预期价格:</text>
+          <view wx:if="{{item.money==0}}"class = 'left_money'>价格面议</view>
+          <view wx:else class = 'left_money'>{{item.money}}元</view>
+        </view>
+        
+      </view>
+      <view class  = 'right_content'>
+        <image class="right_image" style="width: 250rpx; height: 220rpx;"  mode = "aspectFill" src='{{item.image_1}}' ></image>
+      </view>
+      </view>
+    </view>
+
+    <view class = "border"></view>
+  </block>
+
+
+
+<view class="cu-modal drawer-modal justify-start {{modalName=='DrawerModalL'?'show':''}}" bindtap="hideModal">
+  <view class="cu-dialog basis-lg"  style="top:{{CustomBar}}px;height:calc(100vh - {{CustomBar}}px)">
+    <view class="cu-list menu text-left">
+      <view class="cu-item arrow" wx:for="{{10}}" wx:key bindtap='type_search'data-typename="{{typelist[index]}}">
+        <view class="content_type">
+          <view class = 'typeiconarea ' >
+             <image src='../../icons/goods_type/{{typeiconlist[index]}}'style='height:50rpx;width:50rpx'></image>
+          </view>
+          <view class='type_font' >{{typelist[index]}}</view>
+          
+
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+

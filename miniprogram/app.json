@@ -1,0 +1,106 @@
+{
+  "pages": [
+    "pages/Home/Home",
+    "pages/LostFound/LostFound",
+    "pages/logins/logins",
+    "pages/Search/Search",
+    "pages/Me/Me",
+    "pages/Publish/Publish",
+    "pages/images/images",
+    "pages/index/index",
+    "pages/userConsole/userConsole",
+    "pages/storageConsole/storageConsole",
+    "pages/databaseGuide/databaseGuide",
+    "pages/addFunction/addFunction",
+    "pages/deployFunctions/deployFunctions",
+    "pages/chooseLib/chooseLib",
+    "pages/test/test"
+  ],
+  
+  "subPackages": [
+    {
+      "root": "trade",
+      "pages": [
+        "fursearch/fursearch",
+        "more/more",
+        "search/search",
+        "goods/goods",
+        "goods_details/goods_details",
+        "jiaoyi/jiaoyi",
+        "qiugou/qiugou",
+        "mypublic/mypublic"
+      ]
+    },
+    {
+      "root": "service",
+      "pages": [
+        "say/say",
+        "say_add/say_add",
+        "say_detail/say_detail",
+        "LostFound/LostFound"
+      ]
+    },
+    {
+      "root": "public",
+      "pages": [
+        "describe_sale/describe_sale",
+        "LostPublic/LostPublic",
+        "describe/describe",
+        "LostDetiles/LostDetiles"
+      ]
+    },
+    {
+      "root": "myinformation",
+      "pages": [
+        "myintegral/myintegral",
+        "mycollect/mycollect",
+        "mywallet/mywallet",
+        "myorder/myorder",
+        "mypublic/mypublic",
+        "about_us/about_us",
+        "customer_server/customer_server",
+        "join_us/join_us",
+        "suggestion/suggestion"
+      ]
+    },
+    {
+      "root": "others",
+      "pages": [
+        "map/map"
+      ]
+    }
+  ],
+  "window": {
+    "backgroundColor": "#5d8bf0",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#f8bc99",
+    "navigationBarTitleText": "易校园",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#d81e06",
+    "backgroungColor": "#ffffff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/Home/Home",
+        "text": "首页",
+        "iconPath": "pages/images/home_unselect.png",
+        "selectedIconPath": "pages/images/home_select.png"
+      },
+      {
+        "pagePath": "pages/test/test",
+        "text": "课程表",
+        "iconPath": "pages/images/publish_unselect.png",
+        "selectedIconPath": "pages/images/publish_select.png"
+      },
+      {
+        "pagePath": "pages/Me/Me",
+        "text": "我的",
+        "iconPath": "pages/images/me_unselect.png",
+        "selectedIconPath": "pages/images/me_select.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

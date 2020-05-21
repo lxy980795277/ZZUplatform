@@ -1,0 +1,173 @@
+<!--Pages/LostFound/LostFound.wxml-->
+<view class = "background">
+  <view class = "sunhuaiju">
+  <view class = "up">
+    <view class = "top">
+      <view class = "top_top">
+        <view class = 'top_up'>
+          <text class = "top_right_text1">lost</text>
+          <text class = "top_right_text2">&</text>
+          <text class = "top_right_text3">FOUND</text>
+        </view>
+        <view class = "top_down">
+          <view class = "top_right4">
+            <image class ='right_image'src="../../icons/Lost_Found/tab.png"></image>
+          </view>
+          <view class = "Search" >
+            <view class="btnn"style="width:95%;height:50rpx;">
+              <text class="cuIcon-search"></text>
+              <input type="text" class="inputtype" placeholder="请输入要搜索的内容"placeholder-style="font-size:25rpx;"bindconfirm='name_search'bindinput	='name_input' ></input>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class = "Navigation">
+      <view class = "text1">
+      快速导航
+      </view>
+      <view class = "leftline">
+      </view>
+      <view class = "text2" bindtap="choose_type1">
+      校园卡
+      </view>
+    <view class="leftline" ></view>
+      <view class = "text2" bindtap="choose_type2">
+      水卡
+      </view>
+    <view class="leftline" ></view>
+      <view class = "text2" bindtap="choose_type3">
+      耳机
+      </view>
+      </view>
+    </view>
+
+    <view class = 'type_icon1' bindtap = "goto_LostPublic">
+      <image class = 'insert' src = "../../icons/Lost_Found/insert.png"></image>
+    </view>
+    <view class="Content">
+      <block wx:key="id"wx:for="{{list}}" wx:for-item="item" wx:for-index="index">
+        <view wx:if="{{item.isLost==1}}">
+          <view class = "each_background" data-openid="{{item.openid}}" data-id="{{item.id}}" data-see="{{item.see}}" data-comment="{{item.comment}}" bindtap = "goto_LostDetiles">
+            <view class = "information">
+              <image class="Avatar" src = '{{item.user_ava}}'></image>
+              <view class="NickName">
+                <view class="user_name">
+                  {{item.user_name}}
+                </view>
+                <view class = "date">{{item.data}}</view>
+              </view>
+              <view class = "tupian">
+                <image class = "IMG" src = "../../icons/Lost_Found/Found.png"></image>
+              </view>
+              <view class = "details" bindtap='goto_Details'>
+                <text class = "text_type">FOUND</text>
+              </view>
+            </view>
+
+            <view class = "main_content">
+              <view class = "content_left">
+                <view class = "word_content">
+                  <view class = "oneThird">
+                    <text class = "wenzi">拾到物品：</text>
+                    <text class = "ItemDelta">{{item.name}}</text>
+                  </view>
+                  <view class = "oneThird">
+                    <text class = "wenzi">拾到地点：</text>
+                    <text class = "Item_position">{{item.position}}</text>
+                  </view>
+                  <view class = "oneThird">
+                    <text class = "wenzi">物品种类：</text>
+                    <text class = "third">{{item.type}}</text>
+                  </view>
+                </view>
+                <view class = "comment_content">
+                  <view class = "see_icon1">
+                    <image class='icon1'src="../../icons/Lost_Found/lookup.png" ></image>
+                    <text class = "see_font">{{item.see}}</text>
+                  </view>
+              
+                  <view class = "see_icon2">
+                    <image class='icon1'src="../../icons/Lost_Found/comment.png" ></image>
+                    <text class = "see_font">{{item.comment}}</text>
+                  </view>
+                </view>
+              </view>
+
+              <view class = "image_content">
+                <image class="image_border" style="width: 237rpx; height: 197rpx;"  mode = "aspectFill" src='{{item.image_1}}' ></image>
+              </view>
+            </view>
+            <view class = "Blank">
+
+            </view>
+
+          </view>
+        </view>
+        <view wx:else>
+          <view class = "each_background1" data-openid="{{item.openid}}" data-id="{{item.id}}" data-see="{{item.see}}" data-comment="{{item.comment}}" bindtap = "goto_LostDetiles">
+            <view class = "information1">
+              <image class="Avatar" src = '{{item.user_ava}}'></image>
+              <view class="NickName">
+                <view class="user_name">
+                  {{item.user_name}}
+                </view>
+                <view class = "date">{{item.data}}</view>
+              </view>
+              <view class = "tupian">
+                <image class = "IMG" src = "../../icons/Lost_Found/Lost.png"></image>
+              </view>
+              <view class = "details1" bindtap='goto_Details'>   
+                <text class = "text_type1">LOST</text>
+              </view>
+            </view>
+
+            <view class = "main_content1">
+              <view class = "content_left">
+                <view class = "word_content">
+                  <view class = "oneThird">
+                    <text class = "wenzi">拾到物品：</text>
+                    <text class = "ItemDelta">{{item.name}}</text>
+                  </view>
+                  <view class = "oneThird">
+                    <text class = "wenzi">拾到地点：</text>
+                    <text class = "Item_position">{{item.position}}</text>
+                  </view>
+                  <view class = "oneThird">
+                    <text class = "wenzi">物品种类：</text>
+                    <text class = "third">{{item.type}}</text>
+                  </view>
+                </view>
+                <view class = "comment_content">
+                  <view class = "see_icon1">
+                    <image class='icon1'src="../../icons/Lost_Found/lookup.png" ></image>
+                    <text class = "see_font">{{item.see}}</text>
+                  </view>
+              
+                  <view class = "see_icon2">
+                    <image class='icon1'src="../../icons/Lost_Found/comment.png" ></image>
+                    <text class = "see_font">{{item.comment}}</text>
+                  </view>
+                </view>
+              </view>
+
+              <view class = "image_content">
+                <image class="image_border" style="width: 237rpx; height: 197rpx;"  mode = "aspectFill" src='{{item.image_1}}' ></image>
+              </view>
+            </view>
+            <view class = "Blank">
+
+            </view>
+
+          </view>
+        </view>
+
+      </block>
+
+      <view class = "underline">
+        <text class = "reminder">没有更多信息</text>
+      </view>
+
+    </view>
+  </view>
+  </view>
+</view>

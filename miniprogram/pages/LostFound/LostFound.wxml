@@ -1,0 +1,60 @@
+<!--Pages/LostFound/LostFound.wxml-->
+<view class = 'type_icon1 text-xsl' bindtap = "goto_LostPublic">
+  <text class="cuIcon-add text-olive  " ></text>
+</view>
+<view class="Content">
+  <block wx:key="id"wx:for="{{list}}" wx:for-item="item" wx:for-index="index">
+    <view class = "each_background">
+      <view class = "information">
+        <image class="Avatar" src = '{{item.user_avr}}'></image>
+        <view class="NickName">
+          <view class="user_name">
+            {{item.user_name}}
+          </view>
+          <view class = "date">{{item.date}}</view>
+        </view>
+        <view class = "details" bindtap='goto_Details'>
+        <view class="action text-xxl">
+          <text class=" cuIcon-right text-red"></text>
+        </view>
+        </view>
+      </view>
+
+      <view class = "main_content">
+        <view class = "word_content">
+        {{item.content}}
+        </view>
+        <view class = "image_content">
+          <image class="image_border" style="width: 237rpx; height: 197rpx;"  mode = "aspectFill" src='{{item.image_1}}' ></image>
+        </view>
+        <view class = "comment_content">
+        <view class = "see_icon1">
+          <text class="cuIcon-attention sm  text-grey"></text>
+          <text class = "see_font">30</text>
+        </view>
+        
+        <view class = "see_icon2">
+          <text class="cuIcon-comment sm  text-grey"></text>
+          <text class = "see_font">24</text>
+        </view>
+        
+        </view>
+      </view>
+      <view class = "Comments">
+        <block wx:key="id"wx:for="{{5}}" wx:for-item="item" wx:for-index="index">
+          <view>
+            评论
+          </view>
+        </block>
+      </view>
+
+    </view>
+    <view class = "border"></view>
+
+  </block>
+
+  <view class = "underline">
+    <text class = "reminder">没有更多信息</text>
+  </view>
+
+</view>

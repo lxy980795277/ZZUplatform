@@ -1,0 +1,262 @@
+/**index.wxss**/
+
+.type_font{
+  color:#333333;
+  font-size:30rpx;
+}
+.content_type{
+ /* border:3rpx solid red;*/
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.typeiconarea{
+ /* border:3rpx solid red;*/
+  margin-right:30rpx;
+  align-items: center;
+  justify-content: center;
+}
+page {
+  background: #f6f6f6;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.userinfo, .uploader, .tunnel {
+  margin-top: 40rpx;
+  height: 140rpx;
+  width: 100%;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-left: none;
+  border-right: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  transition: all 300ms ease;
+}
+
+.userinfo-avatar {
+  width: 100rpx;
+  height: 100rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+  background-size: cover;
+  background-color: white;
+}
+
+.userinfo-avatar:after {
+  border: none;
+}
+
+.userinfo-nickname {
+  font-size: 32rpx;
+  color: #007aff;
+  background-color: white;
+  background-size: cover;
+}
+
+.userinfo-nickname::after {
+  border: none;
+}
+
+.uploader, .tunnel {
+  height: auto;
+  padding: 0 0 0 40rpx;
+  flex-direction: column;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+
+.uploader-text, .tunnel-text {
+  width: 100%;
+  line-height: 52px;
+  font-size: 34rpx;
+  color: #007aff;
+}
+
+.uploader-container {
+  width: 100%;
+  height: 400rpx;
+  padding: 20rpx 20rpx 20rpx 0;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.uploader-image {
+  width: 100%;
+  height: 360rpx;
+}
+
+.tunnel {
+  padding: 0 0 0 40rpx;
+}
+
+.tunnel-text {
+  position: relative;
+  color: #222;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.tunnel-text:first-child {
+  border-top: none;
+}
+
+.tunnel-switch {
+  position: absolute;
+  right: 20rpx;
+  top: -2rpx;
+}
+
+.disable {
+  color: #888;
+}
+
+.service {
+  position: fixed;
+  right: 40rpx;
+  bottom: 40rpx;
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+  background: linear-gradient(#007aff, #0063ce);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  transition: all 300ms ease;
+}
+
+.service-button {
+  position: absolute;
+  top: 40rpx;
+}
+
+.service:active {
+  box-shadow: none;
+}
+
+.request-text {
+  padding: 20rpx 0;
+  font-size: 24rpx;
+  line-height: 36rpx;
+  word-break: break-all;
+}
+
+.know{
+  display: flex;
+  flex-direction: row;
+  /*border:3rpx solid red;*/
+  opacity: 0.4;
+}
+.notknow{
+  display: flex;
+  flex-direction: row;
+ /* border:3rpx solid red;*/
+
+}
+.left{
+  font-size:30rpx;
+}
+.right{
+  font-size: 30rpx;
+  color:#0081ff;
+}
+
+.picture_area{
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+ /* border:3rpx solid red;*/
+}
+.each_three{
+ /* border:3rpx solid red;*/
+}
+
+
+.inputgoodname{
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  border:3rpx solid red;
+  align-items: center;
+  padding-left:30rpx;
+  height:100rpx;
+}
+.inputgood{
+  border:3rpx solid red;
+  margin-left:20rpx;
+}
+
+
+.reminder1{
+  position: absolute;
+  top:65rpx;
+  right:30rpx;
+}
+
+.lessthan{
+  color:#333333;
+}
+.morethan{
+  color:red;
+}
+
+.white_back{
+  padding-left:29rpx;
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  width:100%;
+  /*border:3rpx solid red;*/
+  height:100rpx;
+  align-items: center;
+  /*justify-content: center;*/
+}
+.type_add{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width:80rpx;
+  height:40rpx;
+  background-color: #333333;
+  /*border:3rpx solid red;*/
+  margin-left:40rpx;
+}
+.type_add_now{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height:40rpx;
+  background-color: #6642b9;
+  padding:10rpx;
+  /*border:3rpx solid red;*/
+  margin-left:40rpx;
+}
+.type_add_font{
+  color:white;
+
+}
+.type_btn{
+  margin-top:20rpx;
+  width:250rpx;
+  height:60rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20rpx;
+}
+.cancel_icon{
+  font-size:40rpx;
+  margin-left:5rpx;
+
+}

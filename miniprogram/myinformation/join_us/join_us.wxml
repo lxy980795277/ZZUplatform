@@ -1,0 +1,6 @@
+<swiper class=" {{DotStyle?'square-dot':'round-dot'}} " style = "height:350rpx;width:100%;" interval="5000" duration="500"
+indicator-dots="true" circular="true" autoplay="true"  bindchange="swiperChange" indicator-color="#8799a3" indicator-active-color="#0081ff">
+      <swiper-item wx:for="{{swiperList}}" wx:key >
+         <image  class='le-img {{nowIdx==index?"le-active":""}}'mode = "aspectFit "  src="{{item.url}}"></image>
+      </swiper-item>
+</swiper>

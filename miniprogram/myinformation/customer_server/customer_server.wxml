@@ -1,0 +1,78 @@
+<scroll-view id="page" style='height: {{windowHeight - 20}}px' scroll-y="true" scroll-top="{{scrollTop}}">
+
+<view class="cu-chat">
+  <view class = "text" wx:for="{{ChatContent}}" wx:key data-id="{{index}}">
+    <view wx:if="{{item.user=='Customer'}}">
+      <view wx:if='{{item.time!="" }}'>
+        <view wx:if='{{item.data==todaytime}}'>
+          <view class="date text-center">{{item.time}}</view>
+        </view>
+        <view wx:if='{{item.data!= todaytime}}'>
+          <view class="date text-center">{{item.data}} {{item.time}}</view>
+        </view>
+      </view>
+      
+      <view class="cu-item self">
+        <view class="main">
+          <view class="content bg-green shadow">
+            <text>{{item.value}}</text>
+          </view>
+        </view>
+        <view class="Avatar">
+          <open-data type="userAvatarUrl"></open-data>
+        </view>
+      </view>
+    </view>
+    <!--<view class="cu-info round">对方撤回一条消息!</view>-->
+    <view wx:if="{{item.user=='Server'}}">
+      <view wx:if='{{item.time!=""}}'>
+        <view class="date text-center">{{item.time}}</view>
+      </view>
+      <view class="cu-item">
+        <view class="Sercer">
+          <image src="https://s2.ax1x.com/2019/09/16/nRgdeO.jpg" class= "server"></image>
+        </view>
+        <view class="main">
+          <view class="content shadow">
+            <text>{{item.value}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>
+
+</scroll-view>
+<view class="cu-bar foot input {{InputBottom!=0?'cur':''}}" style="bottom:{{InputBottom}}px">
+  <view class="action">
+    <text class="cuIcon-sound text-grey"></text>
+  </view>
+    <input type="text" 
+           class="weui-search-bar__input" 
+           value="{{inputVal}}" 
+           focus="{{inputShowed}}" 
+           bindinput="inputTyping" 
+           confirm-type="search"
+          bindconfirm="searchConfirm"/>
+    
+  <!--<input  type="text" 
+          value="" 
+          bindinput="inputTyping" 
+          />
+  <!--<input type="text"
+        class="solid-bottom"
+         bindfocus="InputFocus" 
+         value = "{{inputVal}}"
+         bindblur="InputBlur" 
+         adjust-position="{{false}}" 
+         focus="{{true}}" 
+         auto-focus="true"
+         maxlength="300" 
+         cursor-spacing="100"></input>-->
+  <view class="action">
+    <text class="cuIcon-emojifill text-grey"></text>
+  </view>
+  <button class="cu-btn bg-green shadow"	 bindtap="clearInput">发送</button>
+
+</view>

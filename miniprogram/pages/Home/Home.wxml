@@ -1,0 +1,169 @@
+
+<view class = "top">
+  <view class = 'top_left'>
+    <!--view class = 'yi'>
+      <text class = 'up_font'>YI</text>
+      
+      <view class= 'down_font'></view>
+    </view-->
+    <!--view class = 'right_font'>campus</view-->
+    <image class ='left_image'src="../../icons/mode6/555.jpg"></image>
+    
+  </view>
+
+  <view class = 'top_middle'>
+    <view class = 'middle_border'>
+      <text class = 'school_name'>郑州大学</text>
+      <image class = 'school_icon'src="../../icons/mode6/down.png"></image>
+    </view>
+  </view>
+
+  <view class = 'top_right'>
+    <view class = 'day_font'>{{day}}</view>
+    <view class = 'year_font'>{{month}}.{{year}}</view>
+  </view>
+</view>
+
+<swiper class="swiper"indicator-dots="true" circular="true" autoplay="true" interval="3000" duration="500" >
+    <swiper-item wx:for="{{swiperList}}" wx:key>
+      <image class="swiper_picture"src="{{item.url}}" mode="aspectFill"></image>
+      
+    </swiper-item>
+</swiper>
+
+
+<view class = 'fun_name'>
+  <text class = 'fun_name_font'>二手信息</text>
+</view>
+<view class = 'exchange_content'>
+  <view class = 'exchange_area'bindtap='goto_goods'>
+    <view class ='exchange_border'>
+      <image class = 'exchange_icon_type' src="../../icons/mode6/1.png"></image>
+    </view>
+    
+    <text class = 'exchange_font_type'>出售</text>
+  </view>
+
+  <view class = 'exchange_area'bindtap='goto_buy'>
+    <view class ='exchange_border'>
+      <image class = 'exchange_icon_type' src="../../icons/mode6/2.png"></image>
+    </view>
+    <text class = 'exchange_font_type'>购买</text>
+  </view>
+
+  <view class = 'exchange_area'bindtap='goto_publish'>
+    <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" class ='button_area'>
+      <image class = 'exchange_icon_type' src="../../icons/mode6/3.png"></image>
+    </button>
+    <text class = 'exchange_font_type'>发布</text>
+  </view>
+</view>
+
+<view class = 'fun_name'>
+  <text class = 'fun_name_font'>校园服务</text>
+</view>
+
+<view class = 'message_content'>
+  <view class = 'message_area'bindtap='goto_say'>
+    <view class ='message_border'>
+      <image class = 'exchange_icon_type' src="../../icons/mode6/4.png"></image>
+    </view>
+    <text class = 'exchange_font_type'>有话说</text>
+  </view>
+
+  <view class = 'message_area'bindtap='goto_lostfound'>
+    <view class ='message_border'>
+      <image class = 'exchange_icon_type' src="../../icons/mode6/5.png"></image>
+    </view>
+    <text class = 'exchange_font_type'>失物招领</text>
+  </view>
+
+    <view class = 'else_area'>
+    <view class ='else_border'>
+      <image class = 'exchange_icon_type' src="../../icons/mode6/健康打卡.png"></image>
+    </view>
+    <text class = 'exchange_font_type'>健康打卡</text>
+  </view>
+  
+    <view class = 'message_area'>
+    <view class ='message_border'>
+      <image class = 'exchange_icon_type' src="../../icons/mode6/校园卡.png"></image>
+    </view>
+    <text class = 'exchange_font_type'>校园卡</text>
+  </view>
+<!-- 87a7d6 -->
+</view>
+
+<view class = 'fun_name'>
+  <text class = 'fun_name_font'>校内信息查询</text>
+</view>
+
+<view class = 'donation_content'>
+  <view class = 'donation_area'>
+    <view class ='donation_border'>
+      <image class = 'exchange_icon_type' src="../../icons/mode6/成绩.png"></image>
+    </view>
+    <text class = 'exchange_font_type'>成绩查询</text>
+  </view>
+  <view class = 'donation_area'>
+    <view class ='donation_border'>
+      <image class = 'exchange_icon_type' src="../../icons/mode6/图书.png"></image>
+    </view>
+    <text class = 'exchange_font_type'>图书资源</text>
+  </view>
+  <view class = 'donation_area'>
+    <view class ='donation_border'>
+      <image class = 'exchange_icon_type' src="../../icons/mode6/空教室.png"></image>
+    </view>
+    <text class = 'exchange_font_type'>空教室</text>
+  </view>
+  <view class = 'donation_area'>
+    <view class ='donation_border'>
+      <image class = 'exchange_icon_type' src="../../icons/mode6/资讯.png"></image>
+    </view>
+    <text class = 'exchange_font_type'>校内资讯</text>
+  </view>
+</view>
+
+<view class = 'fun_name'>
+  <text class = 'fun_name_font'>其他</text>
+</view>
+
+<view class = 'else_content'>
+  <view class = 'else_area'bindtap="goto_map">
+    <view class ='else_border'>
+      <image class = 'exchange_icon_type' src="../../icons/mode6/9.png"></image>
+    </view>
+    <text class = 'exchange_font_type'>导航</text>
+  </view>
+  <view class = 'else_area'>
+    <view class ='else_border'bindtap="goto_course">
+      <image class = 'exchange_icon_type' src="../../icons/mode6/10.png"></image>
+    </view>
+    <text class = 'exchange_font_type'>公告</text>
+  </view>
+</view>
+
+<view class="mask" bindtap="hidemask" wx:if="{{mask}}"></view>
+  <view class="choose" wx:if="{{mask}}">
+    <view class='mask_content'>
+      <view class = 'eachone1'bindtap='goto_goodadd'>
+        
+        <text class='eachone_font'>卖</text>
+      </view >
+      <view class = 'eachone2'bindtap='goto_goodsale'>
+        
+        <text class='eachone_font'>买</text>
+      </view >
+    </view>
+  </view>
+
+
+
+
+
+
+
+
+
+

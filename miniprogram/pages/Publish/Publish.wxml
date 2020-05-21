@@ -1,0 +1,46 @@
+<view class="solids-bottom padding-xs flex align-center">
+  <view class="flex-sub text-left">
+    <view class=" text-xl">
+      <text class="text-black text-bold">发布须知\n</text>
+      <text class="text-df">产品类目的选择很重要！如果开始的时候就选择错误的话，那么后面的你做的再好也是白搭。比如你的产品是高跟鞋，却把把类目选择成了食品的类目（这个有点夸张……），那客户搜高跟鞋的时候，你的产品是绝对出不来的，因为系统会默认你的产品是叫高跟鞋的食品。</text>
+    </view>
+  </view>
+</view>
+<button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>
+
+<view class="content">
+  <view class="text-center padding text-xxl">-------请选择您要发布的产品类型------</view>
+</view>
+
+<view class="cu-modal {{modalName=='gridModal'?'show':''}}" bindtap="hideModal">
+    <view class="cu-dialog" catchtap>
+      <radio-group class="block" bindchange="gridchange">
+        <view class="cu-list menu text-left">
+          <view class="cu-item" wx:for="{{4}}" wx:key>
+            <label class="flex justify-between align-center flex-sub">
+              <view class="flex-sub">{{index +4}} 列</view>
+              <radio class="round" value="{{index +4}}" checked="{{gridCol==index+4}}"></radio>
+            </label>
+          </view>
+        </view>
+      </radio-group>
+      <view class="cu-list menu text-left solid-top">
+        <view class="cu-item">
+          <view class="content">
+            <text class="text-grey">边框</text>
+          </view>
+          <view class="action">
+            <switch bindchange="gridswitch"></switch>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="cu-list grid col-{{gridCol}} {{gridBorder?'':'no-border'}}">
+    <view class="cu-item" wx:for="{{iconList}}" wx:key wx:if="{{index<gridCol*2}}">
+      <view bindtap = "goto_goods{{index+1}}">
+        <view class="cuIcon-{{item.icon}} text-{{item.color}}"></view>
+        <text>{{item.name}}</text>
+      </view>
+    </view>
+  </view>

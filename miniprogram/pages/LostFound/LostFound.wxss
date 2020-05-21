@@ -1,0 +1,105 @@
+/* Pages/LostFound/LostFound.wxss */
+.each_background{
+  display: flex;
+  flex-direction: column;
+  height:50%;
+  width:100%;
+}
+.type_icon1{
+  display: flex;
+  position: fixed;
+  top: 950rpx;
+  right: 0rpx;
+}
+.information{
+  display: flex;
+  flex-direction: row;
+}
+.Avatar{
+  border-radius: 50%;
+  overflow: hidden;
+  display: block;
+  width: 100rpx;
+  height: 100rpx;
+  left:0rpx;
+  border: 2px solid #ebebef;
+}
+.NickName{
+  margin-left:10rpx;
+  display: flex;
+  flex-direction: column;
+    /*position: absolute;*/
+  font-size:30rpx;
+  font-weight: 700;
+ /* margin-top:20rpx;*/
+
+ /* border: 5rpx solid green;*/
+  width:620rpx;
+}
+.user_name{
+  margin-top:10rpx;
+  height:25rpx;
+}
+.date{
+  margin-top:30rpx;
+  height:25rpx;
+}
+.details{
+  display: block;
+  right:0rpx;
+  margin-top:30rpx;
+}
+.main_content{
+  display: flex;
+  flex-direction: column;
+  height:350rpx;
+  width:100%;
+  background: #96f893;
+}
+.word_content{
+  display: flex;
+  height:30rpx;
+}
+.image_content{
+  display: flex;
+  height:300rpx;
+  flex-direction: row;
+}
+.comment_content{
+  display: flex;
+
+  background: #746a6d65
+}
+.see_icon1{
+  margin-left:30rpx;
+  width:70rpx;
+}
+.see_icon2{
+  margin-left:70rpx;
+  width:70rpx;
+}
+.Comments{
+  background: #746a6d65;
+  left:5%;
+  width:900%;
+}
+.underline{
+  margin-top:5rpx;
+  width:100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.reminder{
+  color:#c7c7c7;
+  opacity: 0.9;
+  font-size:25rpx;
+}
+
+
+.border{
+  border:1rpx solid rgb(214, 214, 214);
+  width:93%;
+  margin-left:30rpx;
+  opacity: 0.7;
+}

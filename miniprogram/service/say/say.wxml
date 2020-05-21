@@ -1,0 +1,86 @@
+<wxs module="tools">
+var slice = function (a) {
+  var result = a.toString()
+  if(a>1000){
+  var c = parseInt(a/1000)
+  var d = (a%1000)
+  var e = parseInt(d/100)
+  result = c.toString()+'.'+e.toString()+'K'
+  }
+  return (result);
+}
+
+module.exports.slice = slice;
+</wxs>
+
+
+
+
+
+<view class="all">
+    <scroll-view scroll-y="true"  bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}"class = 'scroll'>
+  <view class = 'top'>
+    <image bindtap = 'return_home'src = '../../icons/left.png' class = 'left_icon'/>
+     <!--view class = 'test' bindtap = 'upload_photo'>上传</view--> 
+  </view>
+
+  <view class = 'write'bindtap = 'goto_add'>
+    <view class = 'write_font'>
+      <text class = 'write_fonttype'>我也要说</text>
+    </view>
+    <view class = 'write_icon'>
+      <image class = 'write_icon_type'src = 'https://www.zzumarket.com/image/say/images/down.png'/>
+    </view>
+  </view>
+  
+
+<!--view class="grid col-3 grid-square flex-sub">
+			  <view class="bg-img" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="ViewImage" data-url="{{imgList[index]}}">
+				  <image src='{{imgList[index]}}' mode='aspectFill'></image>
+				  <view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+					  <text class="cuIcon-close"></text>
+				  </view>
+			  </view>
+			  <view class="solids" bindtap="ChooseImage" wx:if="{{imgList.length<9}}">
+				  <text class="cuIcon-cameraadd"></text>
+			  </view>
+		  </view-->
+<block wx:key="id"wx:for="{{list}}" wx:for-item="item" wx:for-index="index">
+    <view class = 'each'>
+      <image class = 'top_icon' src='https://www.zzumarket.com/image/say/animal/{{index%10}}.png'style="width:50rpx;height:50rpx;margin-left:{{(index%10)*60+20}}rpx;margin-bottom:-20rpx;"/>
+      <view class = 'each_content'>
+        <view class = 'top_area'bindtap = 'goto_detail'data-id = '{{item.id}}'data-comment='{{item.comment_number}}'data-see='{{item.see_number}}'>
+          <text class  ='date'>{{item.month}}.{{item.day}} {{item.hour}}.{{item.minute}}</text>
+          <view class = 'see_area'>
+            <image class = 'see_icon'src="../../icons/eye.png"/>
+            
+            <text class = 'number'>{{tools.slice(item.see_number)}}</text>
+          </view>
+
+
+          <view class = 'comment_area'>
+            <image class = 'see_icon'src="../../icons/comment.png"/>
+            <text class = 'number'>{{item.comment_number}}</text>
+          </view>
+        </view>
+
+        <view class = 'content_area'bindtap = 'goto_detail'data-id = '{{item.id}}'data-comment='{{item.comment_number}}'data-see='{{item.see_number}}'>
+          <text class = 'content_font'>　　{{item.content}}</text>
+        </view>
+
+        <view wx:if='{{item.image_1!="no"}}'class = 'image_area'>
+          <image mode = "aspectFill" class = 'image_class'src='{{item.image_1}}'data-src ="{{item.image_1}}"bindtap = "preview"/>
+          <view wx:if='{{item.image_1!="no"}}' image mode = "aspectFill" class = 'image_class'src='{{item.image_2}}'data-src ="{{item.image_2}}"bindtap = "preview"/>
+          <view wx:if='{{item.image_1!="no"}}' image mode = "aspectFill" class = 'image_class'src='{{item.image_3}}'data-src ="{{item.image_3}}"bindtap = "preview"/>
+        </view>
+      </view>
+
+      
+    </view>
+</block>
+
+<view class = 'bottom'>
+</view>
+      
+    </scroll-view>
+</view>

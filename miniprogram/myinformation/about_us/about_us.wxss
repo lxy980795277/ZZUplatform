@@ -1,0 +1,20 @@
+.display_information{
+  height:100%;
+  width:100%;
+}
+.background{
+  margin-top:10rpx;
+  height:1170rpx;
+  width:100%;
+}
+.Model1{
+  height:500rpx;
+  width:100%;
+  position:absolute;
+  top:10rpx;
+}
+.Model1 text {
+    display: block;
+    color: #9d9d9d;
+    margin-top: 40rpx;
+}

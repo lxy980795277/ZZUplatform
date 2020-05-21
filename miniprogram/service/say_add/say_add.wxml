@@ -1,0 +1,38 @@
+<!--view class="grid col-3 grid-square flex-sub">
+			  <view class="bg-img" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="ViewImage" data-url="{{imgList[index]}}">
+				  <image src='{{imgList[index]}}' mode='aspectFill'></image>
+				  <view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+					  <text class="cuIcon-close"></text>
+				  </view>
+			  </view>
+			  <view class="solids" bindtap="ChooseImage" wx:if="{{imgList.length<9}}">
+				  <text class="cuIcon-cameraadd"></text>
+			  </view>
+</view-->
+
+<view class = 'all'>
+  <view class = 'top'>  
+    <textarea maxlength="-1" class = 'input' bindinput="textareaAInput" placeholder="说点什么吧..."auto-focus='true'></textarea>
+  </view>
+  <view class = 'border'></view>
+  <text wx:if="{{imgList.length==9}}"class = 'reminder'>添加图片　{{imgList.length}} / 9 (最多上传9张图片~)</text>
+  <text wx:else class = 'reminder'>添加图片　{{imgList.length}} / 9</text>
+
+  <view class = 'image_area'>
+    <view class="grid col-3 grid-square flex-sub">
+			  <view class="bg-img" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="ViewImage" data-url="{{imgList[index]}}">
+				  <image src='{{imgList[index]}}' mode='aspectFill'class = 'img_class'></image>
+				  <view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+					  <text class="cuIcon-close"></text>
+				  </view>
+			  </view>
+			  <view class="solids" bindtap="ChooseImage" wx:if="{{imgList.length<9}}">
+				  <text class="cuIcon-cameraadd"></text>
+			  </view>
+      </view>
+  </view>
+</view>
+
+<view class = 'submit_area'>
+  <button type = 'primary'class = 'btn 'bindtap = 'upload_photo'>确定</button>
+</view>

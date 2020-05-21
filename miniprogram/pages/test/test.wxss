@@ -1,0 +1,113 @@
+.all{
+  height:100vh;
+  width:100vw;
+  /*border:10rpx solid red;*/
+  display: flex;
+  flex-direction: column;
+
+}
+
+.weekday{
+  
+  margin-top:5vh;
+  height:10vh;
+  width:100%;
+  /*background-color:#eaeef1;*/
+  background-color:#eaeef1;
+  display: flex;
+  flex-direction: row;
+
+}
+
+.week_title{
+  border:1rpx solid black;
+  width:16%;
+  height:100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.title_font{
+  font-size:25rpx;
+  font-weight: 600;
+}
+.week{
+  
+  border-right:1rpx solid black;
+  border-top:1rpx solid black;
+  border-bottom:1rpx solid black;
+  width:14%;
+  height:100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content{
+  display: flex;
+  flex-direction: row;
+  height:90vh;
+  width:100%;
+  /*border:5rpx solid red;*/
+}
+
+.lesson_time{
+  border-right:2rpx dashed black;
+  width:16%;
+  height:90vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f7f7f9;
+}
+.time{
+  height:9vh;
+  width:100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom:1rpx dashed black;
+ 
+}
+.time_font{
+  font-size:25rpx;
+  font-weight: 600;
+}
+
+.class_content{
+  width:84%;
+  height:90vh;
+ /* border:3rpx solid red;*/
+}
+
+.lesson_content{
+  /*border:3rpx solid red;*/
+  height:100%;
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.lesson_name{
+  margin-left:1.5vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:white;
+  font-weight:700;
+
+}
+
+.teacher_name{
+  font-weight: 700;
+  color:#333333;
+  margin-top:2vh;
+}
+
+.lesson_place{
+  font-size:23rpx;
+  margin-top:1vh;
+  margin-left:1.2vw;
+  color:white;
+}

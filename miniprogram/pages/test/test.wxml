@@ -1,0 +1,76 @@
+<view class = 'all'>
+  <view class = 'weekday'>
+    <view class = 'week_title'>
+      <text class = 'title_font'>节次/星期</text>
+    </view>
+    <view class = 'week'>
+      <text class = 'title_font'>星期一</text>
+    </view>
+    <view class = 'week'>
+      <text class = 'title_font'>星期二</text>
+    </view>
+    <view class = 'week'>
+      <text class = 'title_font'>星期三</text>
+    </view>
+    <view class = 'week'>
+      <text class = 'title_font'>星期四</text>
+    </view>
+    <view class = 'week'>
+      <text class = 'title_font'>星期五</text>
+    </view>
+    <view class = 'week'>
+      <text class = 'title_font'>星期六</text>
+    </view>
+  </view>
+
+
+  <!--第一行的星期标题已经完成-->
+  <view class  = 'content'>
+    <view class = 'lesson_time'>
+      <view class = 'time'>
+        <text class = "time_font">第一节</text>
+      </view>
+      <view class = 'time'>
+        <text class = "time_font">第二节</text>
+      </view>
+      <view class = 'time'>
+        <text class = "time_font">第三节</text>
+      </view>
+      <view class = 'time'>
+        <text class = "time_font">第四节</text>
+      </view>
+      <view class = 'time'>
+        <text class = "time_font">第五节</text>
+      </view>
+      <view class = 'time'>
+        <text class = "time_font">第六节</text>
+      </view>
+      <view class = 'time'>
+        <text class = "time_font">第七节</text>
+      </view>
+      <view class = 'time'>
+        <text class = "time_font">第八节</text>
+      </view>
+      <view class = 'time'>
+        <text class = "time_font">第九节</text>
+      </view>
+      <view class = 'time'>
+        <text class = "time_font">第十节</text>
+      </view>
+    </view>
+
+    <view class = 'class_content'>
+      <block wx:key="detail"wx:for="{{lesson}}" wx:for-item="item" wx:for-index="index">
+        <view wx:if='{{item.classroom!=""}}'style="height:{{item.rowspan*9}}vh;width:14%;position:absolute;margin-top:{{item.row*9}}vh;margin-left:{{item.col*14}}%;border-radius:5%;box-shadow: 5rpx 5rpx 8rpx rgb(133, 133, 133);background-color:{{color_list[item.id]}}" >
+          <view class = 'lesson_content'>
+            <text class = 'lesson_name'>{{item.course_name}}</text>
+            <text class = 'teacher_name'>{{item.teacher}}</text>
+            <text class = 'lesson_place'>{{item.classroom}}</text>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+
+  
+</view>

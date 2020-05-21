@@ -1,0 +1,11 @@
+page{
+  padding-bottom: 100rpx;
+}
+.Avatar{
+  height:90rpx;
+  width: 90rpx;
+}
+.server{
+  height:90rpx;
+  width: 90rpx;
+}

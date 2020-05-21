@@ -1,0 +1,61 @@
+
+<button type="default"bindtap='ocrTEST' style="display: flex;align-items: center;justify-content: center;background-color:#5677fc;height:10vh;">
+  <text class = 'btn_font'>上传照片</text>
+</button>
+
+<view class = 'id_place'>
+  <image class = 'image_class'mode="aspectFill"src="{{image_url}}"/>
+</view>
+
+
+<view class="cu-list menu {{menuBorder?'sm-border':''}} {{menuCard?'card-menu margin-top':''}}">
+    <view class="cu-item {{menuArrow?'arrow':''}}">
+      <button class="cu-btn content" open-type="contact">
+        
+        <text class="cuIcon-people text-olive"></text>
+        <text class="text-grey">姓名</text>
+        <text class = 'content_class'>{{name}}</text>
+      </button>
+    </view>
+    <view class="cu-item {{menuArrow?'arrow':''}}">
+      <button class="cu-btn content" open-type="contact">
+        <text class="cuIcon-favorfill text-grey"></text>
+        <text class="text-grey">性别</text>
+        <text class = 'content_class'>{{sex}}</text>
+      </button>
+    </view>
+    <view class="cu-item {{menuArrow?'arrow':''}}">
+      <button class="cu-btn content" open-type="contact">
+        <text class="cuIcon-btn text-olive"></text>
+        <text class="text-grey">民族</text>
+        <text class = 'content_class'>{{minzu}}</text>
+      </button>
+    </view>
+    <view class="cu-item {{menuArrow?'arrow':''}}">
+      <button class="cu-btn content" open-type="contact">
+        <text class="cuIcon-discoverfill text-orange"></text>
+        <text class="text-grey">生日</text>
+        <text class = 'content_class'>{{birth}}</text>
+      </button>
+    </view>
+    <view class="cu-item {{menuArrow?'arrow':''}}">
+      <button class="cu-btn content" open-type="contact">
+        <text class="cuIcon-emojiflashfill text-pink"></text>
+        <text class="text-grey">住址</text>
+        <text class = 'content_class'>{{location}}</text>
+      </button>
+    </view>
+    <view class="cu-item {{menuArrow?'arrow':''}}">
+      <button class="cu-btn content" open-type="contact">
+        <text class="cuIcon-vipcard text-green"></text>
+        <text class="text-grey">证件</text>
+        <text class = 'content_class'>{{card_number}}</text>
+      </button>   
+    </view>
+
+  </view>
+
+
+<view class = 'bottom'>
+  <button bindtap="returnback"style="width:60%;height:7vh;display:flex;align-items: center;background-color:#19be6b;justify-content: center;">绑定</button>
+</view>
