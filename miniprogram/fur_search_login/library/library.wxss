@@ -1,0 +1,23 @@
+@import "../../colorui/animation.wxss";
+page{
+  background:#EDEDED;
+}
+
+image[class*="gif-"] {
+  border-radius: 6rpx;
+  display: block;
+}
+
+.icon{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /*border:3rpx solid red;*/
+  margin-top:10vh;
+  margin-bottom:6vh;
+}
+
+.icon_type{
+  height:10vh;
+  width:20vw;
+}

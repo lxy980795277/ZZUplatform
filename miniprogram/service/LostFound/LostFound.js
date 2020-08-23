@@ -208,7 +208,7 @@ Page({
               }
               var app = getApp();
               var openid = app.globalData.user_openid;
-              console.log("用户的openid是", getApp().globalData.user_openid);
+              console.log("用户的openid是是", getApp().globalData.user_openid);
               /*console.log("用户的昵称是", getApp().globalData.user_info.nickName)
               console.log("用户的头像是", getApp().globalData.user_info.avatarUrl)*/
 

@@ -79,13 +79,13 @@
   </view>
 
     <view class = 'else_area'>
-    <view class ='else_border'>
+    <view class ='else_border'bindtap="goto_daka">
       <image class = 'exchange_icon_type' src="../../icons/mode6/健康打卡.png"></image>
     </view>
     <text class = 'exchange_font_type'>健康打卡</text>
-  </view>
+  </view >
   
-    <view class = 'message_area'>
+    <view class = 'message_area'bindtap = 'goto_card'>
     <view class ='message_border'>
       <image class = 'exchange_icon_type' src="../../icons/mode6/校园卡.png"></image>
     </view>
@@ -99,25 +99,20 @@
 </view>
 
 <view class = 'donation_content'>
-  <view class = 'donation_area'>
+  <view class = 'donation_area'bindtap = 'goto_grade'>
     <view class ='donation_border'>
       <image class = 'exchange_icon_type' src="../../icons/mode6/成绩.png"></image>
     </view>
     <text class = 'exchange_font_type'>成绩查询</text>
   </view>
-  <view class = 'donation_area'>
+  <view class = 'donation_area'bindtap = 'goto_library'>
     <view class ='donation_border'>
       <image class = 'exchange_icon_type' src="../../icons/mode6/图书.png"></image>
     </view>
     <text class = 'exchange_font_type'>图书资源</text>
   </view>
-  <view class = 'donation_area'>
-    <view class ='donation_border'>
-      <image class = 'exchange_icon_type' src="../../icons/mode6/空教室.png"></image>
-    </view>
-    <text class = 'exchange_font_type'>空教室</text>
-  </view>
-  <view class = 'donation_area'>
+  
+  <view class = 'donation_area'bindtap="goto_informs">
     <view class ='donation_border'>
       <image class = 'exchange_icon_type' src="../../icons/mode6/资讯.png"></image>
     </view>
@@ -136,11 +131,17 @@
     </view>
     <text class = 'exchange_font_type'>导航</text>
   </view>
-  <view class = 'else_area'>
+  <!--view class = 'else_area'bindtap='goto_gonggao'>
     <view class ='else_border'bindtap="goto_course">
       <image class = 'exchange_icon_type' src="../../icons/mode6/10.png"></image>
     </view>
     <text class = 'exchange_font_type'>公告</text>
+  </view-->
+  <view class = 'donation_area' bindtap='goto_call'>
+    <view class ='donation_border'>
+      <image class = 'exchange_icon_type' src="../../icons/mode6/通讯录.png"></image>
+    </view>
+    <text class = 'exchange_font_type'>通讯录</text>
   </view>
 </view>
 

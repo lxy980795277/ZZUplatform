@@ -1,0 +1,66 @@
+.top{
+  height:5vh;
+  width:100%;
+  background-image:url('https://www.zzumarket.com/inform_background.png');
+  background-repeat: no-repeat;
+  /*border:3rpx solid red;*/
+  background-size:100%;
+  
+}
+.title{
+  width:90%;
+  margin-left:40rpx;
+  /*border:3rpx solid red;*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /*overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  font-size:30rpx;*/
+  font-size: 35rpx;
+  font-weight: 600;
+  margin-bottom: 1vh;
+  background-color: #eaeef1;
+}
+.other{
+  width:90%;
+  margin-left:40rpx;
+  /*border:3rpx solid red;*/
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /*overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  font-size:30rpx;*/
+  
+}
+
+.people{
+  font-weight: 600;
+  font-size:24rpx;
+  margin-left:35rpx;
+  margin-bottom: 1vh;
+}
+
+.line{
+  /*border:3rpx solid red;*/
+}
+
+.content{
+  /*border:3rpx solid green;*/
+  width:96%;
+  margin-left:20rpx;
+  background-color: #eaeef1;
+}
+.footer{
+  /*border:3rpx solid red;*/
+  width:100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

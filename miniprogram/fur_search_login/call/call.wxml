@@ -1,0 +1,23 @@
+<view class="bg-white flex-sub radius shadow-lg">
+    <image src="https://image.weilanwl.com/gif/rhomb-white.gif" mode="aspectFit" class="gif-white response" style="height:10vh"></image>
+</view>
+<view class = 'top_area'>
+  <view class = 'top_font_area'>
+    <text class = 'reminder'>点击可直接拨号</text>
+  </view>
+</view>
+
+<block wx:key="id"wx:for="{{list}}" wx:for-item="item" wx:for-index="index">
+    <view class = "main_content" style="background-color:{{color[index%2]}};"bindtap = "CallPhone" data-phone="{{item.phone}}">
+      <view class = "right_name">
+        <text class = "textFont1">{{item.dept}}</text>
+      </view>
+      <view class = "right_phone">
+        <image class = 'Img' src = "../../icons/phone.png"></image>
+        <text class = "textFont2">{{item.phone}}</text>
+      </view>
+      
+    </view>
+    <view class="border_long"></view>
+</block>
+

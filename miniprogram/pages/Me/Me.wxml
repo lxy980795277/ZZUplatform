@@ -1,11 +1,20 @@
 <scroll-view scroll-y class="scrollPage">
   <view class="UCenter-bg">
     <image src="../../icons/logo.png" class="png" mode="widthFix"></image>
-    <view class="text-xl">综合信息服务平台
-      <text class="text-df">v 2.0</text>
+    <view class="text-xl">郑州大学综合信息服务平台
+      <!-- <text class="text-df">v 2.0</text> -->
     </view>
     <view class="margin-top-sm">
-      <text>Location:ZZU</text>
+      <button wx:if="{{login_stat==0}}" bindtap="login">
+        <text>点击登录</text>
+      </button>
+      <!-- <button wx:elif="{{login_stat==1}}" bindtap="logout">
+        <text>退出登录</text>
+      </button> -->
+      <view wx:else>
+        <!--text class="text-x1"> {{name}}同学，欢迎登录！</text-->
+        <view class="cu-tag bg-white">{{name}}</view>
+      </view>
     </view>
     <image src="https://www.zzumarket.com/wave.gif" mode="scaleToFill" class="gif-wave"></image>
   </view>
@@ -33,7 +42,7 @@
         <text class="text-grey">实名认证</text>
       </view>
     </view>
-    <view class="cu-item arrow">
+    <view class="cu-item arrow"bindtap = 'reminder'>
       <navigator class="content" url="/pages/about/about/about" hover-class="none">
         <image src="../../icons/logo.png" class="png" mode="aspectFit"></image>
         <text class="text-grey">关于信息服务平台</text>
@@ -45,13 +54,13 @@
         <text class="text-grey">日志</text>
       </navigator>
     </view>
-    <view class="cu-item arrow">
+    <view class="cu-item arrow"bindtap = 'reminder'>
       <view class="content" bindtap="showQrcode">
         <text class="cuIcon-cart text-red"></text>
         <text class="text-grey">我的物品</text>
       </view>
     </view>
-    <view class="cu-item arrow">
+    <view class="cu-item arrow"bindtap = 'reminder'>
       <button class="cu-btn content" open-type="feedback">
         <text class="cuIcon-voice text-cyan"></text>
         <text class="text-grey">我说的话</text>
@@ -61,6 +70,12 @@
       <button class="cu-btn content" open-type="feedback">
         <text class="cuIcon-writefill text-red"></text>
         <text class="text-grey">意见反馈</text>
+      </button>
+    </view>
+        <view class="cu-item arrow">
+      <button class="cu-btn content" bindtap="logout">
+        <text class="cuIcon-writefill text-grey"></text>
+        <text class="text-grey">退出登录</text>
       </button>
     </view>
   </view>

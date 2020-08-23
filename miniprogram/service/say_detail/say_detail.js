@@ -14,11 +14,23 @@ Page({
     comment_content:"" ,//输入的评论
     timenow:"",
     openid:"",
-
+    image:[],
     if_input2:false,  //评论回复的几个数据
     reply_chatid:"",
     reply_replyid:"",
     reply_openid:"",
+  },
+
+  preview: function (e) {
+    var current = e.currentTarget.dataset.src;
+    console.log("current是：", current)
+    
+    this.data.image[0] = current;
+    wx.previewImage({
+      current: current, // 当前显示图片的http链接
+      urls: this.data.image // 需要预览的图片http链接列表
+    })
+
   },
 
   

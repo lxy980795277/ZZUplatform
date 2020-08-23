@@ -1,18 +1,25 @@
-// service/say/say.js
+const amap = require('../../libs/amap-wx.js')
+let plugin = requirePlugin('routePlan');
+let key = '2T5BZ-BFGHP-WJ7DK-LTTDS-MGOJE-AXBTQ';  //使用在腾讯位置服务申请的key
+let referer = '腾讯位置服务示例中心小程序';   //调用插件的app的名称
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-    markers: [{
-      iconPath: "/resources/others.png",
-      id: 0,
-      latitude: 23.099994,
-      longitude: 113.324520,
-      width: 50,
-      height: 50
+    
+    startPoint: [{
+      'latitude':'' ,
+      'longitude':'' 
     }],
+    endPoint:[{
+    'name':'',
+    'latitude':'' ,
+    'longitude':'' 
+  }],
+    inputShowed: false,
+    inputVal: "",
+    amapPlugin: null,
+    key: "6799b5f6f88d3d9fb52ac244855a8759",
+    lat: 34.817700,
+    lng: 113.538520,
     polyline: [{
       points: [{
         longitude: 113.3245211,
@@ -25,82 +32,237 @@ Page({
       width: 2,
       dottedLine: true
     }],
-    controls: [{
-      id: 1,
-      iconPath: '/resources/location.png',
-      position: {
-        left: 0,
-        top: 300 - 50,
-        width: 50,
-        height: 50
+    covers: [],
+    address: [],
+    scrollH: 256
+  },
+
+  onLoad: function(options) {
+    const that = this;
+    wx.getSystemInfo({
+      success: function(res) {
+        // 计算主体部分高度,单位为px
+        that.setData({
+          // second部分高度 = 利用窗口可使用高度 - first部分高度（这里的高度单位为px，所有利用比例将600rpx转换为px）
+          scrollH: res.windowHeight - 44 - res.windowWidth / 750 * 600
+        })
+      }
+    })
+    this.setData({
+      amapPlugin: new amap.AMapWX({
+        key: this.data.key 
+      })
+    })
+    console.log("key:"+this.data.key)
+    setTimeout(() => {
+      this.getLocation(() => {
+        console.log("options.key:"+options.key)
+        this.getPoiAround(options.key || "学院" )
+      });
+    }, 200)
+    
+  },
+  trim: function(value) {
+    return value ? value.toString().replace(/(^\s*)|(\s*$)/g, "") : value;
+  },
+  showInput() {
+    this.setData({
+      inputShowed: true
+    })
+  },
+  hideInput() {
+    this.setData({
+      inputVal: "",
+      inputShowed: false
+    })
+    wx.hideKeyboard(); //强行隐藏键盘
+  },
+  clearInput() {
+    this.setData({
+      inputVal: ""
+    })
+  },
+  inputTyping: function(e) {
+    this.setData({
+      inputVal: e.detail.value
+    })
+  },
+  getLocation(callback) {
+    const that = this
+    this.data.amapPlugin.getRegeo({
+      success: (data) => {
+        that.setData({
+          lng: data[0].longitude,
+          lat: data[0].latitude
+        })
+        callback();
       },
-      clickable: true
-    }]
+      fail: (info) => {
+        callback();
+      }
+    })
   },
-  regionchange(e) {
-    console.log(e.type)
-  },
-  markertap(e) {
-    console.log(e.markerId)
-  },
-  controltap(e) {
-    console.log(e.controlId)
-  },
+  getPoiAround(keywords) {
+    //检索周边的POI	
+    wx.showLoading({
+      title: "加载中..."
+    })
+    const that = this;
+    setTimeout(() => {
+      this.data.amapPlugin.getPoiAround({
+        querykeywords: keywords,
+        location: '113.538520,34.817700', //location： 经纬度坐标。 为空时， 基于当前位置进行地址解析。 格式： '经度,纬度'
+        success: (data) => {
+          let arr = [];
+          let addr = [];
+          for (let i = 0; i < data.markers.length; i++) {
+            arr.push({
+              id: i,
+              latitude: data.markers[i].latitude,
+              longitude: data.markers[i].longitude,
+              title: data.markers[i].name
+            })
+            let tel = that.trim(data.poisData[i].tel);
+            if (~tel.indexOf(";")) {
+              tel = tel.split(";")[0]
+            }
+            addr.push({
+              id: i,
+              latitude: data.markers[i].latitude,
+              longitude: data.markers[i].longitude,
+              title: data.markers[i].name,
+              address: data.markers[i].address,
+              
+              distance: data.poisData[i].distance
+            })
+          }
+          that.setData({
+            address: addr,
+            covers: arr
+          })
 
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
+          wx.hideLoading()
+        },
+        fail: (info) => {
+          console.log(info)
+          wx.showToast({
+            title: '获取位置信息失败，请检查是否打开位置权限'
+          })
+          wx.hideLoading()
+        }
+      })
+    }, 0);
 
   },
+  
+  bindInput: function(e) {
+    const keywords = e.detail.value;
+    this.getPoiAround(keywords);
+  },
+  marker: function(e) {
+    const that = this
+    const item = that.data.address[e.markerId || 0];
+    const menu = item.tel ? ["打电话", "到这里"] : ["到这里"];
 
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
+    wx.showActionSheet({
+      itemList: menu,
+      success(res) {
+        if (res.tapIndex == 0 && item.tel) {
+          wx.makePhoneCall({
+            phoneNumber: item.tel
+          })
+        } else {
+          const latitude = Number(item.latitude)
+          const longitude = Number(item.longitude)
+          let name = String(item.title)
+          console.log("名字："+name)
+          console.log("经度："+longitude)
+          console.log("纬度："+latitude)
+        //目标地点的经纬度坐标
+          let endPoint = JSON.stringify({  //终点
+              'name': name,
+              'latitude': latitude,
+              'longitude': longitude
+          });
+        
+          console.log("endPoint:" + endPoint)
+          var that = this
+          wx.getLocation({
+            type:'wgs84',
+            success:function(res){
+              //获取当前位置经纬度
+              console.log("获取当前位置成功！")
+                that.setData({
+                  latitude:res.latitude,
+                  longitude:res.longitude
+                })
+                console.log(res.latitude)
+                console.log(res.longitude)
+          
+            }
+          })
+          console.log("调试打印")
+          console.log(latitude)
+          console.log(longitude)
+          let startPoint = JSON.stringify({  //终点
+            'latitude': that.data.latitude,
+            'longitude': this.data.longitude
+        });
+          wx.navigateTo({
+              url: 'plugin://routePlan/index?key=' + key + '&referer=' + referer + '&endPoint=' + endPoint 
+          });
+        }
+      },
+      fail(res) {
+        console.log(res.errMsg)
+      }
+    })
 
+  },
+
+  go(event) {
+    const index = Number(event.currentTarget.dataset.id);
+    const item = this.data.address[index];
+    let latitude = Number(item.latitude)
+    let longitude = Number(item.longitude)
+    let name = String(item.title)
+    console.log("名字："+name)
+    console.log("经度："+longitude)
+    console.log("纬度："+latitude)
+    // let plugin = requirePlugin('routePlan');
+    // let key = '2T5BZ-BFGHP-WJ7DK-LTTDS-MGOJE-AXBTQ';  //使用在腾讯位置服务申请的key
+    // let referer = '腾讯位置服务示例中心小程序';   //调用插件的app的名称
+    let endPoint = JSON.stringify({  //终点
+        'name': name,
+        'latitude': latitude,
+        'longitude': longitude
+    });
+  
+    console.log("endPoint:" + endPoint)
+    var that = this
+    wx.getLocation({
+      type:'wgs84',
+      success:function(res){
+        //获取当前位置经纬度
+        console.log("获取当前位置成功！")
+          that.setData({
+            latitude:res.latitude,
+            longitude:res.longitude
+          })
+          console.log(res.latitude)
+          console.log(res.longitude)
+      }
+    })
+    console.log("调试打印")
+    console.log(latitude)
+    console.log(longitude)
+    let startPoint = JSON.stringify({  //终点
+      'latitude': that.data.latitude,
+      'longitude': this.data.longitude
+  });
+    wx.navigateTo({
+        url: 'plugin://routePlan/index?key=' + key + '&referer=' + referer + '&endPoint=' + endPoint 
+    });
+ 
   }
 })

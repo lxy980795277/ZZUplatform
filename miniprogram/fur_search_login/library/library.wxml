@@ -1,0 +1,17 @@
+
+<view class="bg-gradual-blue flex-sub  radius shadow-lg">
+    <image src="https://image.weilanwl.com/gif/rhomb-black.gif" mode="aspectFit" class="gif-black response" style="height:20vh"></image>
+</view>
+
+<view class = 'icon'>
+  <image class = 'icon_type'src = '../../icons/books.png'/>
+</view>
+
+<view class="cu-bar bg-white search " style="top:{{CustomBar}}px;margin-bottom:19vh">
+  <view class="search-form round">
+    <text class="cuIcon-search"></text>
+    <input type="text" placeholder="搜索馆藏图书" confirm-type="search" bindinput="search" bindconfirm="sure"></input>
+  </view>
+</view>
+
+

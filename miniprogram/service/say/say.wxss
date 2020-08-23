@@ -151,7 +151,7 @@ page{
   margin-left:50rpx;
   display: flex;
   color:#333333;
-  /*border:3rpx solid red;*/
+ /* border:3rpx solid red;*/
   text-align: left;
   word-wrap: break-word;
   word-break:break-all;

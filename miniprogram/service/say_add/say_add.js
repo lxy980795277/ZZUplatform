@@ -144,7 +144,7 @@ for (var j = photo_number; j < 9; j++) {
 wx.request({
   url: 'https://www.zzumarket.com/insert_say.php', //服务器地址
   data: {
-    id: this.data.openid + this.data.timenow,
+    id: this.data.timenow,
     openid: this.data.openid,
     content: this.data.textarea,
     img1: final_img[0],

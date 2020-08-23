@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "校内资讯",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black",
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 50,
+  "usingComponents": {}
+}

@@ -1,0 +1,109 @@
+
+page{
+  background:#EDEDED;
+
+}
+
+
+.each_book{
+  margin-left:30rpx;
+  margin-bottom:2.5vh;
+  width:92%;
+  height:20vh;
+  background-color:#fff;
+  border-radius: 20rpx;
+  box-shadow: 8rpx 8rpx 8rpx 8rpx rgb(221, 221, 221);
+  display: flex;
+  flex-direction: row;
+  padding-left:30rpx;
+  padding-right:30rpx;
+  align-items: center;
+
+}
+
+.book_image{
+ /* border:3rpx solid red;*/
+  height:16vh;
+  width:25%;
+}
+.image_type{
+  height:100%;
+  width:100%;
+}
+
+.content{
+ /* border:3rpx solid red;*/
+  width:70%;
+  height:18vh;
+  margin-left:20rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+.name{
+  width:100%;
+  height:3vh;
+  /*border:3rpx solid red;*/
+  display: flex;
+}
+
+.name_text{
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  font-size:30rpx;
+  font-weight: 600;
+}
+.id{
+  width:100%;
+  height:3vh;
+  /*border:3rpx solid red;*/
+  display: flex;
+  color:#7b7b7b;
+  font-size: 24rpx;
+}
+
+.border{
+  width:90%;
+  border-bottom:2rpx dashed #6b6b6b;
+}
+
+.place{
+  height:6vh;
+  width:100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.each_place{
+  /*border:3rpx solid red;*/
+  height:3vh;
+  width:100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.place_detail{
+  /*border:3rpx solid green;*/
+  width:50%;
+  height:3vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.left{
+  color:#333333;
+  font-weight:600;
+  font-size:25rpx;
+}
+.right{
+  color:#333333;
+  font-weight:600;
+  font-size:25rpx;
+}
+.right1{
+  color:#cc2828;
+  font-weight:600;
+  font-size:25rpx;
+}

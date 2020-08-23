@@ -1,0 +1,11 @@
+
+<view class='margin-xl bg-white padding-xl radius shadow-lg'>
+  <view class='text-center margin-bottom text-lg  text-grey'>关于健康打卡</view>
+  <view class='text-content'>
+    <view>Hi！欢迎使用健康打卡功能</view>
+    <view class='margin-top-sm'>随着疫情的好转，确诊人数愈发减少，但学校为了大家的安全，依旧保持着健康打卡的习惯。但是每天都会有大量同学因为各种原因忘记了健康打卡，本功能希望为广大师生解决这一难题。</view>
+    <view class='margin-top-sm'>用户只需要在界面输入学号，密码，和邮箱号（最好是QQ邮箱，将会用于接收打卡成功的邮件提醒），系统将会在每天的12点钟帮您自动完成健康打卡（每10分钟打卡20个，依次顺延），同时会将打卡成功的消息发送至您的邮箱。从此您可以解放双手，再也不用担心没有忘记打卡而被点名批评、扣综测。</view>
+    <view class='margin-top-sm'>本功能的实现基于Google和Firefox引擎下的Selenium模块，结合Scrapy等框架一起实现，整个过程完全运行在开发者的服务器上，保障数据的安全可靠，您的学号和密码以及邮箱信息会以临时变量长期存放在服务器上，待学校取消打卡后将会自动一键删除，开发者不会存储您的任何信息。</view>
+    <view class='margin-top-sm'>更多问题请联系开发者！</view>
+  </view>
+</view>

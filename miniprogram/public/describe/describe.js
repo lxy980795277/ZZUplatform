@@ -216,7 +216,7 @@ Page({
       wx.request({
         url: 'https://www.zzumarket.com/insert_into.php', //服务器地址
         data: {
-          id: this.data.openid + this.data.timenow,
+          id: this.data.openid + this.data.timenow, 
           openid: this.data.openid,
           name: this.data.good_name,
           type: this.data.type_now,

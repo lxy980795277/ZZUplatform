@@ -1,0 +1,38 @@
+<scroll-view scroll-x class="bg-white nav text-center">
+  <view class="cu-item {{index==TabCur?'text-blue cur':''}}" wx:for="{{3}}" wx:key bindtap="tabSelect" data-id="{{index}}">
+    {{list[index]}}
+  </view>
+</scroll-view>
+
+<view wx:if="{{TabCur==0}}"> 
+  <block  wx:for="{{news}}"wx:for-item="item">
+    <view class = 'line'bindtap='goto_detail_informs' data-src='{{item.link}}'> 
+      <view  class="cu-tag bg-mauve light">{{item.date}}</view>
+      <view class = 'content'>
+        <text class = 'font'>{{item.title}}</text>
+      </view>
+    </view>
+  </block>
+</view>
+
+<view wx:if="{{TabCur==1}}"> 
+  <block  wx:for="{{xueshu}}"wx:for-item="item">
+    <view class = 'line'bindtap='goto_detail_informs' data-src='{{item.link}}'> 
+      <view  class="cu-tag bg-mauve light">{{item.date}}</view>
+      <view class = 'content'>
+        <text class = 'font'>{{item.title}}</text>
+      </view>
+    </view>
+  </block>
+</view>
+
+<view wx:if="{{TabCur==2}}"> 
+  <block  wx:for="{{tongzhi}}"wx:for-item="item">
+    <view class = 'line'bindtap='goto_detail_informs' data-src='{{item.link}}'> 
+      <view  class="cu-tag bg-mauve light">{{item.date}}</view>
+      <view class = 'content'>
+        <text class = 'font'>{{item.title}}</text>
+      </view>
+    </view>
+  </block>
+</view>

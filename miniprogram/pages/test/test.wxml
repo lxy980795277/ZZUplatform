@@ -60,7 +60,7 @@
     </view>
 
     <view class = 'class_content'>
-      <block wx:key="detail"wx:for="{{lesson}}" wx:for-item="item" wx:for-index="index">
+      <block wx:key="detail"wx:for="{{course_json}}" wx:for-item="item" wx:for-index="index">
         <view wx:if='{{item.classroom!=""}}'style="height:{{item.rowspan*9}}vh;width:14%;position:absolute;margin-top:{{item.row*9}}vh;margin-left:{{item.col*14}}%;border-radius:5%;box-shadow: 5rpx 5rpx 8rpx rgb(133, 133, 133);background-color:{{color_list[item.id]}}" >
           <view class = 'lesson_content'>
             <text class = 'lesson_name'>{{item.course_name}}</text>

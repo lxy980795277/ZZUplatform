@@ -32,12 +32,26 @@
       ]
     },
     {
+      "root": "fur_search_login",
+      "pages": [
+        "lessons/lessons",
+        "grades/grades",
+        "library/library",
+        "library_detail/library_detail",
+        "call/call",
+        "informs/informs",
+        "informs_detail/informs_detail"
+      ]
+    },
+    {
       "root": "service",
       "pages": [
         "say/say",
         "say_add/say_add",
         "say_detail/say_detail",
-        "LostFound/LostFound"
+        "LostFound/LostFound",
+        "daka/daka",
+        "reminder/reminder"
       ]
     },
     {
@@ -71,9 +85,9 @@
     }
   ],
   "window": {
-    "backgroundColor": "#5d8bf0",
+    "backgroundColor": "#ffffff",
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#f8bc99",
+    "navigationBarBackgroundColor": "#5677FC",
     "navigationBarTitleText": "易校园",
     "navigationBarTextStyle": "black"
   },
@@ -102,5 +116,18 @@
       }
     ]
   },
-  "sitemapLocation": "sitemap.json"
+  "plugins": {
+    "routePlan": {
+      "version": "1.0.5",
+      "provider": "wx50b5593e81dd937a"
+    }
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序定位"
+    }
+  },
+  
+  "sitemapLocation": "sitemap.json",
+  "servicemarket": true
 }

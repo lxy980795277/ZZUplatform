@@ -1,0 +1,59 @@
+<view class="cu-form-group">
+		<picker bindchange="PickerChange" value="{{index_content}} 　学期" range="{{picker}}">
+			<view class="picker">
+        <view wx:if="{{index_content==5}}">{{'2018-2019 2　学期　(点击可更换学期)'}}</view>
+        <view wx:else>{{picker[index_content]}}　学期</view>
+			</view>
+		</picker>
+</view>
+
+<view class = 'top' >
+  <view wx:for="{{total_info}}"wx:for-item="item">
+    <view class = 'three_content'wx:if="{{item.semester==picker[index_content]}}">
+    <view class = 'each_one'>
+        <text class = 'number'>{{item.course_num}}</text>
+        <text class ='number_name'>总课程数</text>
+    </view>
+    <view class = 'each_one'>
+        <text class = 'number'>{{item.grade_avg}}</text>
+        <text class ='number_name'>平均绩点</text>
+    </view>
+    <view class = 'each_one'>
+        <text class = 'number'>{{item.xuefen_sum}}</text>
+        <text class ='number_name'>总学分</text>
+    </view>
+  </view>
+  </view>
+  <view class = 'reminder'>{{reminder}}</view>
+</view>
+
+<block wx:for="{{grade_content}}"wx:for-item="item">
+<view  wx:if="{{item.semester==picker[index_content]}}"class = "each_lesson_content">
+  <view class = 'first_floor'>
+    <view class = 'tag>'>
+      <view wx:if="{{item.course_type=='必修课'}}" class="cu-tag bg-blue">必修课</view>
+      <view wx:else class="cu-tag bg-green">选修课</view>
+    </view>
+    <view class = 'course_name'>
+      <text class = 'name_text'>{{item.course_name}}</text>
+    </view>
+    <view class = 'score'>{{item.score}}</view>
+  </view>
+
+  <view class = 'second_floor'>
+    <view class = 'semester'>学期：{{item.semester}}</view>
+    <view class = 'id'>编号：{{item.course_id}}</view>
+  </view>
+
+  <view class = 'third_floor'>
+    <view class = 'semester'>学分：{{item.xuefen}}</view>
+    <view class = 'id'>绩点：{{item.grade}}</view>
+  </view>
+</view>
+</block>
+
+<view class = 'footer'>
+<view class="solid-bottom text-xs padding">
+  <text class="text-gray">当前学期暂无更多课程，请选择其他学期</text>
+</view>
+</view>

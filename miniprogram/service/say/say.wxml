@@ -65,13 +65,13 @@ module.exports.slice = slice;
         </view>
 
         <view class = 'content_area'bindtap = 'goto_detail'data-id = '{{item.id}}'data-comment='{{item.comment_number}}'data-see='{{item.see_number}}'>
-          <text class = 'content_font'>　　{{item.content}}</text>
+          <text class = 'content_font'>{{item.content}}</text>
         </view>
 
         <view wx:if='{{item.image_1!="no"}}'class = 'image_area'>
           <image mode = "aspectFill" class = 'image_class'src='{{item.image_1}}'data-src ="{{item.image_1}}"bindtap = "preview"/>
-          <view wx:if='{{item.image_1!="no"}}' image mode = "aspectFill" class = 'image_class'src='{{item.image_2}}'data-src ="{{item.image_2}}"bindtap = "preview"/>
-          <view wx:if='{{item.image_1!="no"}}' image mode = "aspectFill" class = 'image_class'src='{{item.image_3}}'data-src ="{{item.image_3}}"bindtap = "preview"/>
+          <view wx:if='{{item.image_2!="no"}}' image mode = "aspectFill" class = 'image_class'src='{{item.image_2}}'data-src ="{{item.image_2}}"bindtap = "preview"/>
+          <view wx:if='{{item.image_3!="no"}}'image mode = "aspectFill" class = 'image_class'src='{{item.image_3}}'data-src ="{{item.image_3}}"bindtap = "preview"/>
         </view>
       </view>
 

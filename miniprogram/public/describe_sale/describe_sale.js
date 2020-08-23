@@ -26,6 +26,12 @@ Page({
     user_phone: "",      //用户的手机号
     money: 0,            //商品价格
     type_now: "",        //当前选择的类别
+    today_year:0,
+    today_month:0,
+    today_day:0,
+    today_hour:0,
+    today_minute:0,
+    today_second:0
   },
 
   showModal(e) {
@@ -222,6 +228,12 @@ Page({
           wechatava: this.data.user_avaurl,
           time2: this.data.real_time,
           buy_or_sale: 0,    //1是卖，0为买
+          year:this.data.today_year,
+          month:this.data.today_month,
+          day:this.data.today_day,
+          hour:this.data.today_hour,
+          minute:this.data.today_minute,
+          second:this.data.today_second
         },
         header: {
           'content-type': 'application/json'
@@ -362,6 +374,12 @@ Page({
       timenow: Y + M + D + h + m + s,
       time_regulate: time,
       real_time: real_date,
+      today_year:Y,
+      today_month:M,
+      today_day:D,
+      today_hour:h,
+      today_minute:m,
+      today_second:s,
     })
     console.log("openid和时间已经成功获取", this.data.openid + '|' + this.data.timenow)
 

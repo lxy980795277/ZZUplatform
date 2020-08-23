@@ -1,0 +1,160 @@
+page{
+  background:#EDEDED;
+}
+
+
+
+.picker{
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:#333333;
+  font-weight: 600;
+}
+.tui-default {
+  padding: 20rpx 30rpx;
+}
+
+.top{
+  
+  width:90%;
+  margin-top:3vh;
+  margin-left:36rpx;
+  box-shadow: 5rpx 5rpx 5rpx 5rpx #afafaf;
+  height:20vh;
+  background-color: #ffffff;
+  display:flex;
+  flex-direction: column;
+}
+
+.three_content{
+  /*border:3rpx solid red;*/
+  width:100%;
+  height:10vh;
+  display: flex;
+  flex-direction: row;
+}
+.each_one{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width:33.33%;
+  height:100%;
+  /*border:3rpx solid blue;*/
+}
+
+.number{
+  font-size:40rpx;
+  color:#ff7900;
+  font-weight: 600;
+  margin-bottom:1vh;
+}
+
+.reminder{
+  /*border:3rpx solid red;*/
+  border-top:2rpx dashed rgb(208, 207, 207);
+  width:100%;
+  height:10vh;
+  padding-top:10rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left:20rpx;
+  padding-right:20rpx;
+  font-size:25rpx;
+  
+}
+
+.each_lesson_content{
+  
+  margin-top:2vh;
+  width:90%;
+  border-radius: 25rpx;
+  margin-left:36rpx;
+  box-shadow: 6rpx 6rpx 6rpx 6rpx #afafaf;
+  height:20vh;
+  background-color: #ffffff;
+  display:flex;
+  flex-direction: column;
+}
+.first_floor{
+  display: flex;
+  flex-direction: row;
+  height:6vh;
+  align-items: center;
+  border-bottom: 2rpx solid #c9c9c9;
+}
+.tag{
+  margin-left:20rpx;
+  width:20%;
+}
+.course_name{
+ 
+  width:50%;
+  /*border:3rpx solid red;*/
+  display: flex;
+  align-items: center;
+  
+}
+.score{
+  width:28%;
+
+  height:100%;
+  font-size:37rpx;
+  color:red;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.name_text{
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  font-size:30rpx;
+  font-weight: 600;
+}
+
+.second_floor{
+  display: flex;
+  flex-direction: row;
+  height:7vh;
+  align-items: center;
+  border-bottom: 2rpx dashed #e4e4e4;
+  /*border:3rpx solid red;*/
+}
+.semester{
+  width:50%;
+  display: flex;
+  align-items: center;
+  font-size:30rpx;
+  /*border:3rpx solid blue;*/
+  padding-left:50rpx;
+}
+.id{
+  width:50%;
+  display: flex;
+  align-items: center;
+  font-size:30rpx;
+  /*border:3rpx solid blue;*/
+  padding-left:100rpx;
+}
+
+.third_floor{
+  display: flex;
+  flex-direction: row;
+  height:7vh;
+  align-items: center;
+  border-bottom: 2rpx solid #c9c9c9;
+  /*border:3rpx solid red;*/
+}
+
+.footer{
+  /*border:3rpx solid red;*/
+  width:100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

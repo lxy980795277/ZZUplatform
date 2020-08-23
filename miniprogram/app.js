@@ -5,8 +5,14 @@ App({
       goods_id:"",   //用来获取这个商品的编号呢 
       user_openid:"",
       user_info:{},
-      user_name:"",
+      user_name:"", // 用户微信名
       user_ava:"",
+      idcard_image:"",
+      user_id:"", //学号
+      user_pwd:"", //密码
+      name:"", //学生姓名
+      login_stat:"",
+      informs_src:""
   },
   onLaunch: function () {
     

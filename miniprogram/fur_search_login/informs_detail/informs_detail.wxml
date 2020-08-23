@@ -1,0 +1,21 @@
+<view class = 'top'></view>
+<view class = 'title'>{{content.title}}</view>
+<view class = 'other'>
+  <view class = 'people'>发布人：{{content.pub_people}}</view>
+  <view class = 'people'>日期：{{content.pub_date}}</view>
+  <view class = 'people'>阅读量：{{content.readers}}</view>
+</view>
+
+<view class = 'content'>
+<block wx:for="{{content.content}}"wx:for-item="item">
+  <view class = 'line'>{{item}}</view>
+</block>
+</view>
+
+
+<view class = 'footer'>
+<view class="solid-bottom text-xs padding">
+  <text class="text-gray">@版权所有 郑州大学 2020-2020@</text>
+</view>
+</view>
+

@@ -186,6 +186,19 @@
    /*border:3rpx solid red;*/
    background-color: white;
 }
+
+.button_area1{
+  height:90rpx;
+   width:200rpx;
+   border-radius: 10rpx;
+   margin-top:1vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   /*border:3rpx solid red;*/
+   background-color: white;
+   /*border:3rpx solid red*/
+}
 .exchange_border{
    /*background-color: #39b54a;*/
    /*box-shadow: 5rpx 5rpx 5rpx #bdbcbc ;*/
@@ -203,6 +216,11 @@
 .exchange_icon_type{
   width:65rpx;
   height:65rpx;
+}
+
+.exchange_icon_type1{
+  width:70rpx;
+  height:70rpx;
 }
 
 .exchange_font_type{

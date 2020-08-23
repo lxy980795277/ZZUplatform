@@ -10,6 +10,37 @@ Page({
     starCount: '1.6k',
     forksCount: 108,
     visitTotal: "2.4k",
+    login_stat: 0,
+    name: '',
+    test:'刘鑫煜'
+  },
+
+  login: function(){
+    
+    wx.navigateTo({
+      url: '../../fur_search_login/lessons/lessons',
+    })
+    
+  },
+  reminder:function(e){
+    wx.showToast({
+      title: '敬请期待',
+      icon:'none'
+    })
+  },
+
+  logout: function(){
+    var app = getApp()
+    app.globalData.login_stat = 0 //将登录状态置为0
+    app.globalData.user_id = null
+    app.globalData.user_pwd = null
+    wx.showToast({
+      title: '已退出登录',
+    })
+    var that = this
+    that.setData({
+      login_stat: 0,
+    })
   },
 
   /**
@@ -33,9 +64,7 @@ Page({
         })
       }
     })
-
-
-    
+  
 
     
     
@@ -258,6 +287,16 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    var that = this
+    if (getApp().globalData.user_id) {
+      var final_name =  getApp().globalData.name.replace(/\s*/g,"");
+      getApp().globalData.login_stat = 1
+      // console.log(getApp().globalData.name)
+      that.setData({
+        login_stat: 1,
+        name: final_name
+      })
+    } 
 
   },
 

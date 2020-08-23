@@ -71,7 +71,7 @@ const getTouchData = (endX, endY, startX, startY) => {
 
 module.exports = {
   formatTime: formatTime,
-  formatTime1:formatTime1,
+  formatTime01:formatTime1,
   formatTime2: formatTime2,
   get_year:get_year,
   get_month:get_month,
@@ -80,3 +80,6 @@ module.exports = {
   get_minute:get_minute,
   get_second:get_second,
 }
+
+// //公共js，主要做表单验证，以及基本方法封装
+

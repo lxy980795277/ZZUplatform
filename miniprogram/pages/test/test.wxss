@@ -13,7 +13,7 @@
   height:10vh;
   width:100%;
   /*background-color:#eaeef1;*/
-  background-color:#eaeef1;
+  background-color:#e8f6e8;
   display: flex;
   flex-direction: row;
 
@@ -30,6 +30,7 @@
 .title_font{
   font-size:25rpx;
   font-weight: 600;
+  color:#75da75;
 }
 .week{
   
@@ -48,6 +49,7 @@
   flex-direction: row;
   height:90vh;
   width:100%;
+  background: #ecf6fd;
   /*border:5rpx solid red;*/
 }
 

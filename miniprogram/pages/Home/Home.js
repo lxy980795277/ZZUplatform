@@ -42,6 +42,32 @@ Page({
       url: '../../pages/test/test',
     })
   },
+  goto_grade:function(e){
+    wx.navigateTo({
+      url: '../../fur_search_login/grades/grades',
+    })
+  },
+  goto_library:function(e){
+    wx.navigateTo({
+      url: '../../fur_search_login/library/library',
+    })
+  },
+  goto_call:function(e){
+    wx.navigateTo({
+      url: '../../fur_search_login/call/call',
+    })
+  },
+  goto_informs:function(e){
+    wx.navigateTo({
+      url: '../../fur_search_login/informs/informs',
+    })
+  },
+  goto_daka:function(e){
+    wx.navigateTo({
+      url: '../../service/daka/daka',
+    })
+  },
+
   goto_goods:function(e){
     wx.navigateTo({
       url: '../../trade/jiaoyi/jiaoyi',
@@ -58,8 +84,43 @@ Page({
     })
   },
   goto_lostfound:function(e){
+    wx.showToast({
+      title: '敬请期待~',
+      icon:'none'
+    })
+  },
+  goto_gonggao:function(e){
+    wx.showToast({
+      title: '敬请期待~',
+      icon:'none'
+    })
+  },
+  goto_say:function(e){
     wx.navigateTo({
-      url: '../../service/LostFound/LostFound',
+      url: '../../service/say/say',
+    })
+  },
+  goto_goodadd:function(e){
+    wx.navigateTo({
+      url: '../../public/describe/describe',
+    })
+    this.setData({
+      mask:false,
+    })
+  },
+  goto_card:function(e){
+    
+    wx.showToast({
+      title: '敬请期待~',
+      icon:'none'
+    })
+  },
+  goto_goodsale:function(e){
+    wx.navigateTo({
+      url: '../../public/describe_sale/describe_sale',
+    })
+    this.setData({
+      mask: false,
     })
   },
   goto_publish: function (e) {
@@ -128,27 +189,7 @@ Page({
     
     
   },
-  goto_say:function(e){
-    wx.navigateTo({
-      url: '../../service/say/say',
-    })
-  },
-  goto_goodadd:function(e){
-    wx.navigateTo({
-      url: '../../public/describe/describe',
-    })
-    this.setData({
-      mask:false,
-    })
-  },
-  goto_goodsale:function(e){
-    wx.navigateTo({
-      url: '../../public/describe/describe',
-    })
-    this.setData({
-      mask: false,
-    })
-  },
+ 
 
 
 

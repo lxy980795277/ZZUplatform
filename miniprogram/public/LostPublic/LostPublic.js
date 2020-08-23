@@ -204,7 +204,7 @@ Page({
       var final_img = this.data.imgList;
       var photo_number = this.data.imgList.length;
       for (var i = 0; i < photo_number; i++) {
-        final_img[i] = "https://www.zzumarket.com/image/" + this.data.openid + '/' + this.data.timenow + '/' + i.toString() + '.jpg';
+        final_img[i] = "https://www.zzumarlet.com/image/" + this.data.openid + '/' + this.data.timenow + '/' + i.toString() + '.jpg';
       }
       for (var j = photo_number; j < 9; j++) {
         final_img[j] = 'no';
@@ -401,7 +401,7 @@ Page({
       time_regulate: time,
       real_time: real_date,
     })
-    console.log("openid和时间已经成功获取", this.data.openid + '|' + this.data.timenow)
+    console.log("openid和时间已经成功获取", getApp().globalData.user_openid + '|' + this.data.timenow)
 
 
   }

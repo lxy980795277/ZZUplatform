@@ -1,0 +1,70 @@
+
+<view class="cu-bar bg-white search " style="top:{{CustomBar}}px;margin-bottom:3vh">
+  <view class="search-form round">
+    <text class="cuIcon-search"></text>
+    <input type="text" placeholder="{{book_name}}" confirm-type="search" bindinput="search" bindconfirm="sure"></input>
+  </view>
+</view>
+
+
+<block wx:for="{{books_content}}"wx:for-item="item">
+  <view class  = 'each_book '> 
+    <view class = 'book_image'>
+      <image src='{{item.img_url}}' class= 'image_type'mode="aspectFill"/>
+    </view>
+
+    <view class = 'content'>
+      <view class = 'name'> 
+        <text class = 'name_text'>{{item.book_name}}</text>
+      </view>
+      <view class = 'id'>索引：{{item.index}}</view>
+      <view class = 'id'>作者：{{item.author}}</view>
+      <view class = 'id'>出版：{{item.publish}}</view>
+      <view class = 'border'></view>
+      <view class = 'place'>
+        <view class = 'each_place'>
+          <view class ='place_detail'>
+            <view class = 'left'>新区馆:　</view>
+            <view wx:if="{{item.book_num[0]&&item.book_num[0].center}}"class = 'right'>{{item.book_num[0].center}}</view>
+            <view wx:elif="{{item.book_num[1]&&item.book_num[1].center}}"class = 'right'>{{item.book_num[1].center}}</view>
+            <view wx:elif="{{item.book_num[2]&&item.book_num[2].center}}"class = 'right'>{{item.book_num[2].center}}</view>
+            <view wx:elif="{{item.book_num[3]&&item.book_num[3].center}}"class = 'right'>{{item.book_num[3].center}}</view>
+            <view  wx:else  class= 'right1'>暂无存书</view>
+            
+          </view>
+          <view class ='place_detail'>
+            <view class = 'left'>南区馆:　</view>
+            <view  wx:if="{{item.book_num[0]&&item.book_num[0].south}}" class= 'right'>{{item.book_num[0].south}}</view>
+            <view  wx:elif="{{item.book_num[1]&&item.book_num[1].south}}" class= 'right'>{{item.book_num[1].south}}</view>
+            <view  wx:elif="{{item.book_num[2]&&item.book_num[2].south}}" class= 'right'>{{item.book_num[2].south}}</view>
+            <view  wx:elif="{{item.book_num[3]&&item.book_num[3].south}}" class= 'right'>{{item.book_num[3].south}}</view>
+            <view  wx:else  class= 'right1'>暂无存书</view>
+
+          </view>
+        </view>
+        <view class = 'each_place'>
+          <view class ='place_detail'>
+            <view class = 'left'>北区馆:　</view>
+            <view  wx:if="{{item.book_num[0]&&item.book_num[0].north}}" class= 'right'>{{item.book_num[0].north}}</view>
+            <view  wx:elif="{{item.book_num[1]&&item.book_num[1].north}}" class= 'right'>{{item.book_num[1].north}}</view>
+            <view  wx:elif="{{item.book_num[2]&&item.book_num[2].north}}" class= 'right'>{{item.book_num[2].north}}</view>
+            <view  wx:elif="{{item.book_num[3]&&item.book_num[3].north}}" class= 'right'>{{item.book_num[3].north}}</view>
+            <view  wx:else  class= 'right1'>暂无存书</view>
+          </view>
+          <view class ='place_detail'>
+            <view class = 'left'>医学院:　</view>
+            <view  wx:if="{{item.book_num[0]&&item.book_num[0].yixueyuan}}" class= 'right'>{{item.book_num[0].yixueyuan}}</view>
+            <view  wx:elif="{{item.book_num[1]&&item.book_num[1].yixueyuan}}" class= 'right'>{{item.book_num[1].yixueyuan}}</view>
+            <view  wx:elif="{{item.book_num[2]&&item.book_num[2].yixueyuan}}" class= 'right'>{{item.book_num[2].yixueyuan}}</view>
+            <view  wx:elif="{{item.book_num[3]&&item.book_num[3].yixueyuan}}" class= 'right'>{{item.book_num[3].yixueyuan}}</view>
+            <view  wx:else  class= 'right1'>暂无存书</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</block>
+
+
+
+

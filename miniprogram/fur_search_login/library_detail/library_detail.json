@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "图书馆",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black",
+  "enablePullDownRefresh": true,
+  "usingComponents": {}
+}
